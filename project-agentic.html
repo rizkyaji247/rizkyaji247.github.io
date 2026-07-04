@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agentic AI (OpenClaw env) — Rizky.QA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1633;--ink-soft:#4A4566;--muted:#7C7896;
+    --bg:#FFFFFF;--bg-warm:#FAF7F3;--line:#ECE7E0;
+    --violet:#6D4AFF;--coral:#FF7A59;
+    --grad:linear-gradient(120deg,#6D4AFF 0%,#9B4DFF 45%,#FF7A59 100%);
+    --grad-soft:linear-gradient(120deg,rgba(109,74,255,.10),rgba(255,122,89,.10));
+    --shadow:0 16px 40px -20px rgba(27,22,51,.28);
+    --maxw:840px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(255,255,255,.85);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:'Space Grotesk';font-weight:700;font-size:18px}
+  .brand span{color:var(--coral)}
+  .back{font-family:'Space Grotesk';font-weight:600;font-size:14px;color:var(--violet);display:inline-flex;align-items:center;gap:8px}
+  .back:hover{gap:12px;transition:gap .2s}
+
+  .hero{padding:64px 0 40px}
+  .eyebrow{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--grad)}
+  h1{font-family:'Space Grotesk';font-weight:700;font-size:clamp(32px,6vw,48px);letter-spacing:-.02em;line-height:1.08;margin:16px 0 14px}
+  .lead{font-size:17px;color:var(--ink-soft);max-width:640px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chip{font-size:13px;background:var(--grad-soft);color:var(--ink-soft);padding:6px 13px;border-radius:999px;border:1px solid rgba(109,74,255,.14);font-weight:500}
+
+  .cover{margin:36px 0;border-radius:20px;overflow:hidden;border:2px dashed rgba(109,74,255,.3);background:var(--grad-soft);aspect-ratio:16/8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:24px}
+  .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .cover b{font-family:'Space Grotesk';font-size:16px}
+  .cover small{font-size:12.5px;color:var(--muted);margin-top:4px}
+
+  section{padding:26px 0}
+  h2{font-family:'Space Grotesk';font-weight:600;font-size:24px;letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  h2::before{content:"//";font-family:'JetBrains Mono';font-size:15px;color:var(--coral)}
+  p{color:var(--ink-soft);font-size:15.5px;margin-bottom:12px}
+  .ph{color:var(--muted);font-style:italic;background:var(--bg-warm);border:1px dashed var(--line);border-radius:12px;padding:14px 18px;font-size:14.5px}
+  ul.list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:6px 0 12px}
+  ul.list li{position:relative;padding-left:20px;font-size:15px;color:var(--ink-soft)}
+  ul.list li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:2px;background:var(--grad)}
+
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  .shot{border-radius:14px;border:2px dashed rgba(109,74,255,.25);background:var(--grad-soft);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:12.5px;position:relative;overflow:hidden;padding:14px}
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  .cta{margin:44px 0 64px;background:var(--ink);color:#fff;border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;bottom:-70%;right:-10%;width:380px;height:380px;background:var(--grad);filter:blur(100px);opacity:.45;border-radius:50%}
+  .cta b{font-family:'Space Grotesk';font-size:19px;position:relative}
+  .btn{position:relative;display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-weight:600;font-size:14px;padding:12px 22px;border-radius:999px;background:var(--grad);color:#fff;box-shadow:0 8px 22px -8px rgba(109,74,255,.6)}
+
+  footer{padding:32px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  @media(max-width:640px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">Rizky<span>.</span>QA</a>
+    <a class="back" href="index.html#interests">← Back to portfolio</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <span class="eyebrow">Personal Project · Agentic AI</span>
+    <h1>Agentic AI (OpenClaw env)</h1>
+    <p class="lead">[ Satu kalimat ringkas tentang agent yang kamu bangun di OpenClaw environment. Ganti teks ini. ]</p>
+    <div class="meta"><span class="chip">Agents</span><span class="chip">OpenClaw</span><span class="chip">Automation</span></div>
+  </div>
+
+  <!-- COVER IMAGE — uncomment the img line & set src, then delete the placeholder text -->
+  <div class="cover">
+    <!-- <img src="project-agentic.jpg" alt="Agentic AI (OpenClaw env) cover"> -->
+    <b>Cover image</b>
+    <small>Upload gambar utama project ini, lalu aktifkan tag &lt;img&gt; di kode</small>
+  </div>
+
+  <section>
+    <h2>Overview</h2>
+    <p class="ph">[ Ceritakan project ini secara umum — apa itu, kenapa kamu membuatnya, dan masalah apa yang ingin diselesaikan. 2–3 paragraf. ]</p>
+  </section>
+
+  <section>
+    <h2>What I built</h2>
+    <p class="ph">[ Jelaskan yang kamu bangun secara konkret — fitur utama, alur kerjanya, arsitektur sederhananya. ]</p>
+    <ul class="list">
+      <li>[ Fitur / kemampuan 1 ]</li>
+      <li>[ Fitur / kemampuan 2 ]</li>
+      <li>[ Fitur / kemampuan 3 ]</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Tools &amp; stack</h2>
+    <p class="ph">[ Sebutkan tools, bahasa, framework, atau platform yang dipakai — dan kenapa memilihnya. ]</p>
+  </section>
+
+  <section>
+    <h2>Screenshots</h2>
+    <div class="gallery">
+      <!-- Tiap kotak: uncomment <img>, isi src, hapus teks placeholder -->
+      <div class="shot"><!-- <img src="shot-1.jpg" alt=""> -->Screenshot 1 — upload gambarmu</div>
+      <div class="shot"><!-- <img src="shot-2.jpg" alt=""> -->Screenshot 2 — upload gambarmu</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What I learned</h2>
+    <p class="ph">[ Refleksi singkat — skill baru yang didapat, tantangan yang dihadapi, dan bagaimana ini menyambung ke pekerjaan QA-mu. Bagian ini yang paling disukai recruiter. ]</p>
+  </section>
+
+  <div class="cta">
+    <b>Want to see the code or a demo?</b>
+    <!-- Ganti href dengan link repo GitHub / demo -->
+    <a class="btn" href="#">Open repository →</a>
+  </div>
+</div>
+
+<footer>© <span id="yr"></span> Muhamad Rizky Aji Nugroho · <a href="index.html" style="color:var(--violet)">Rizky.QA</a></footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
