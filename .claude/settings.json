@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ssh -T git@github.com -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Initial commit: QA portfolio website *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git ls-remote *)",
+      "Bash(curl -s \"https://api.github.com/users/rizkyaji247/repos?sort=created&per_page=10\")",
+      "Bash(git fetch *)",
+      "Bash(git ls-tree *)",
+      "Bash(curl -s -o /dev/null -w \"index: %{http_code}\\\\n\" https://rizkyaji247.github.io/)",
+      "Bash(curl -s https://rizkyaji247.github.io/)",
+      "Bash(xdg-open \"https://rizkyaji247.github.io/\")",
+      "Bash(sed -i 's|https://drive.google.com/file/d/1wQw1p-CD-bQH6OzLxcWUUB8kPMvFHXat/view?usp=sharing|https://drive.google.com/file/d/14gwIXgf36U_tGm5SoRvgWM4DmUvtGBgX/view?usp=sharing|g' index.html)",
+      "Bash(curl -s -o /dev/null -w \"link check: %{http_code}\\\\n\" -L \"https://drive.google.com/file/d/14gwIXgf36U_tGm5SoRvgWM4DmUvtGBgX/view?usp=sharing\")",
+      "Bash(git commit -m 'Update CV download link *)",
+      "Bash(python3)",
+      "Bash(git commit -m 'Replace interest project placeholders with lorem ipsum *)"
+    ]
+  }
+}
