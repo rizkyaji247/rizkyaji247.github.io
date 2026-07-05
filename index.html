@@ -422,6 +422,7 @@
     .proj-grid{grid-template-columns:1fr}
     .case-body{grid-template-columns:1fr}
     .nav-links{display:none}
+    .nav-ctrl{margin-left:auto}
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important;scroll-behavior:auto}
@@ -458,7 +459,9 @@
   [data-theme="cyber"] .banner-tag{text-shadow:0 0 10px rgba(0,230,138,.6)}
 
   /* NAV CONTROL BUTTONS */
-  .nav-ctrl{display:inline-flex;align-items:center;gap:8px}
+  .nav-ctrl{display:inline-flex;align-items:center;gap:8px;margin-left:18px}
+  .nav-links{margin-left:auto}
+  .nav-inner{justify-content:flex-start}
   .icon-btn{
     width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);
     background:var(--card);color:var(--ink);cursor:pointer;font-size:16px;
@@ -484,11 +487,11 @@
       <a href="#contact" data-i18n="nav-contact">Contact</a>
       <!-- Download CV: replace href with the path/URL to your CV file -->
       <a href="https://drive.google.com/file/d/14gwIXgf36U_tGm5SoRvgWM4DmUvtGBgX/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="cv">↓ Download CV</a>
-      <span class="nav-ctrl">
-        <button class="icon-btn" id="theme-btn" type="button" title="Switch theme">☀️</button>
-        <button class="icon-btn" id="lang-btn" type="button" title="Ganti bahasa / Switch language">ID</button>
-      </span>
     </nav>
+    <span class="nav-ctrl">
+      <button class="icon-btn" id="theme-btn" type="button" title="Switch theme">☀️</button>
+      <button class="icon-btn" id="lang-btn" type="button" title="Ganti bahasa / Switch language">ID</button>
+    </span>
   </div>
 </header>
 
