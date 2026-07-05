@@ -12,6 +12,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="theme-color" content="#6D4AFF" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>" />
+<script>try{var _t=localStorage.getItem("theme");if(_t&&_t!=="light")document.documentElement.setAttribute("data-theme",_t);}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -32,6 +33,9 @@
     --radius:18px;
     --shadow:0 16px 40px -20px rgba(27,22,51,.28);
     --maxw:1120px;
+    --card:#FFFFFF;
+    --panel:#1B1633;
+    --nav-bg:rgba(255,255,255,.82);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -59,7 +63,7 @@
   header.nav{
     position:sticky;top:0;z-index:50;
     backdrop-filter:saturate(180%) blur(12px);
-    background:rgba(255,255,255,.82);
+    background:var(--nav-bg);
     border-bottom:1px solid var(--line);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -139,7 +143,7 @@
     background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
     padding:28px;transition:transform .25s ease, box-shadow .25s ease, border-color .25s;
   }
-  .section-warm .skill-card{background:#fff}
+  .section-warm .skill-card{background:var(--card)}
   .skill-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
   .skill-card .kicker{font-family:'JetBrains Mono';font-size:11px;color:var(--coral);letter-spacing:.1em;text-transform:uppercase}
   .skill-card h3{font-family:'Space Grotesk';font-size:19px;margin:8px 0 16px;font-weight:600}
@@ -152,7 +156,7 @@
   /* CASE STUDIES */
   .cases{display:grid;gap:26px}
   .case{
-    background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;
     transition:box-shadow .25s ease, transform .25s ease;
   }
   .case:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
@@ -160,7 +164,7 @@
     display:flex;align-items:center;justify-content:space-between;gap:16px;
     padding:20px 26px;border-bottom:1px solid var(--line);background:var(--bg-warm);
   }
-  .section-warm .case{background:#fff}
+  .section-warm .case{background:var(--card)}
   .case-id{font-family:'JetBrains Mono';font-size:12px;color:var(--muted);font-weight:500}
   .case-top h3{font-family:'Space Grotesk';font-size:21px;font-weight:600;letter-spacing:-.01em}
   .pill{
@@ -195,10 +199,10 @@
     background:var(--grad-soft);border-radius:10px;padding:10px 14px;border:1px solid rgba(109,74,255,.12);
   }
   .artifact{
-    margin-top:48px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;
+    margin-top:48px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);
   }
   .artifact-head{
-    display:flex;align-items:center;gap:10px;padding:14px 20px;background:var(--ink);color:#fff;
+    display:flex;align-items:center;gap:10px;padding:14px 20px;background:var(--panel);color:#fff;
   }
   .artifact-head .dot{width:11px;height:11px;border-radius:50%}
   .d1{background:#FF6058}.d2{background:#FFBD2E}.d3{background:#28C840}
@@ -214,7 +218,7 @@
   .artifact-table td{line-height:1.55}
   .artifact-table th,.artifact-table td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
   .artifact-table tbody td{border-bottom:2px solid rgba(27,22,51,.30)}
-  .artifact-table th{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.92);background:var(--ink)}
+  .artifact-table th{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.92);background:var(--panel)}
   .artifact-table td.tc{font-family:'JetBrains Mono';color:var(--violet);font-weight:500}
   .artifact-table td.c-scn{background:rgba(255,122,89,.09)}
   .artifact-table td.c-desc{background:rgba(109,74,255,.07);font-weight:600}
@@ -229,12 +233,12 @@
   .script-card{
     display:flex;flex-direction:column;align-items:stretch;
     text-align:left;cursor:pointer;border:1px solid var(--line);border-radius:18px;overflow:hidden;
-    background:#fff;padding:0;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s;
+    background:var(--card);padding:0;font:inherit;color:inherit;transition:transform .25s,box-shadow .25s;
   }
   .script-card .sc-body{flex:1;align-content:start}
   .script-card .sc-open{margin-top:auto}
   .script-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-  .script-card .sc-head{display:flex;align-items:center;gap:8px;padding:12px 18px;background:var(--ink);color:#fff}
+  .script-card .sc-head{display:flex;align-items:center;gap:8px;padding:12px 18px;background:var(--panel);color:#fff}
   .script-card .sc-head .dot{width:10px;height:10px;border-radius:50%}
   .script-card .sc-head span{font-family:'JetBrains Mono';font-size:11.5px;margin-left:6px;opacity:.8}
   .script-card .sc-body{padding:20px 22px;display:flex;flex-direction:column;gap:8px}
@@ -249,7 +253,7 @@
   .script-modal.open{display:flex}
   .script-modal .panel{
     width:min(1200px,100%);max-height:88vh;display:flex;flex-direction:column;
-    background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);
+    background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);
   }
   .script-modal .panel .artifact-scroll{overflow:auto}
   .script-modal .m-close{
@@ -265,7 +269,7 @@
 
   /* LIVE TESTING PANEL */
   .live-panel{
-    background:var(--ink);border-radius:18px;padding:22px 26px;margin-bottom:26px;color:#fff;
+    background:var(--panel);border-radius:18px;padding:22px 26px;margin-bottom:26px;color:#fff;
     display:flex;flex-direction:column;gap:16px;overflow:hidden;position:relative;
   }
   .live-top{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.1em;color:rgba(255,255,255,.75)}
@@ -297,7 +301,7 @@
   .certs{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
   .cert{
     display:flex;align-items:center;gap:12px;
-    background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 16px 10px 10px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px 10px 10px;
   }
   .cert img{width:72px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;transition:transform .2s}
   .cert img:hover{transform:scale(1.06)}
@@ -317,7 +321,7 @@
   .tl-item:last-child{padding-bottom:0}
   .tl-item::before{
     content:"";position:absolute;left:-34px;top:4px;width:16px;height:16px;border-radius:50%;
-    background:#fff;border:3px solid var(--violet);box-shadow:0 0 0 4px rgba(109,74,255,.12);
+    background:var(--card);border:3px solid var(--violet);box-shadow:0 0 0 4px rgba(109,74,255,.12);
   }
   .tl-date{font-family:'JetBrains Mono';font-size:12px;color:var(--coral);font-weight:500}
   .tl-item h3{font-family:'Space Grotesk';font-size:20px;margin:6px 0 2px;font-weight:600}
@@ -329,10 +333,10 @@
   /* SIDE PROJECTS / INTERESTS */
   .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:820px;margin:0 auto}
   .proj{
-    background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;
+    background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;
     display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease;
   }
-  .section-warm .proj{background:#fff}
+  .section-warm .proj{background:var(--card)}
   .proj:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
   .proj-img{
     position:relative;aspect-ratio:16/10;background:var(--grad-soft);
@@ -367,7 +371,7 @@
   .soon-badge{
     display:inline-flex;align-items:center;gap:9px;margin-top:6px;
     font-family:'JetBrains Mono';font-size:11px;font-weight:700;letter-spacing:.14em;
-    color:var(--violet);background:#fff;border:1px solid rgba(109,74,255,.22);
+    color:var(--violet);background:var(--card);border:1px solid rgba(109,74,255,.22);
     padding:7px 14px;border-radius:999px;
   }
   .pulse{position:relative;width:9px;height:9px;border-radius:50%;background:var(--coral)}
@@ -387,7 +391,7 @@
 
   /* CONTACT */
   .contact-card{
-    background:var(--ink);color:#fff;border-radius:28px;padding:clamp(36px,5vw,64px);
+    background:var(--panel);color:#fff;border-radius:28px;padding:clamp(36px,5vw,64px);
     position:relative;overflow:hidden;
   }
   .contact-card::before{content:"";position:absolute;bottom:-40%;left:-10%;width:520px;height:520px;background:var(--grad);filter:blur(120px);opacity:.4;border-radius:50%}
@@ -423,6 +427,47 @@
     *{animation:none!important;transition:none!important;scroll-behavior:auto}
     .reveal{opacity:1;transform:none}
   }
+
+  /* ============ THEMES ============ */
+  [data-theme="dark"]{
+    --ink:#EDEAFB;--ink-soft:#BFB9DE;--muted:#8681A6;
+    --bg:#0E0B1E;--bg-warm:#141021;--line:#292345;
+    --card:#181330;--panel:#0A0816;--nav-bg:rgba(14,11,30,.85);
+    --grad-soft:linear-gradient(120deg,rgba(109,74,255,.18),rgba(255,122,89,.18));
+    --shadow:0 16px 40px -20px rgba(0,0,0,.65);
+    --pass-bg:rgba(31,169,113,.16);
+  }
+  [data-theme="cyber"]{
+    --ink:#D9FFEA;--ink-soft:#9BE3BE;--muted:#5FA183;
+    --bg:#040D08;--bg-warm:#07130C;--line:#153826;
+    --card:#0A1B11;--panel:#020805;--nav-bg:rgba(4,13,8,.88);
+    --violet:#00E68A;--coral:#00C2FF;
+    --grad:linear-gradient(120deg,#00E68A 0%,#00C2FF 100%);
+    --grad-soft:linear-gradient(120deg,rgba(0,230,138,.10),rgba(0,194,255,.10));
+    --pass:#00E68A;--pass-bg:rgba(0,230,138,.12);
+    --shadow:0 16px 44px -18px rgba(0,230,138,.28);
+  }
+  [data-theme="dark"] .tag,[data-theme="cyber"] .tag{background:rgba(8,6,20,.85);color:var(--violet);border-color:rgba(255,255,255,.14)}
+  [data-theme="dark"] .pill.wip{background:rgba(240,160,48,.15);color:#F0B860}
+  [data-theme="cyber"] .pill.wip{background:rgba(0,194,255,.12);color:#7CDBFF}
+  [data-theme="cyber"] .chip{border-color:rgba(0,230,138,.22)}
+  [data-theme="cyber"] .soon-badge{border-color:rgba(0,230,138,.3)}
+  [data-theme="cyber"] .testi-soon{border-color:rgba(0,230,138,.35)}
+  [data-theme="cyber"] .grad-text{filter:drop-shadow(0 0 14px rgba(0,230,138,.35))}
+  [data-theme="cyber"] .btn-primary{box-shadow:0 8px 24px -8px rgba(0,230,138,.55);color:#03170D}
+  [data-theme="cyber"] .banner-tag{text-shadow:0 0 10px rgba(0,230,138,.6)}
+
+  /* NAV CONTROL BUTTONS */
+  .nav-ctrl{display:inline-flex;align-items:center;gap:8px}
+  .icon-btn{
+    width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);
+    background:var(--card);color:var(--ink);cursor:pointer;font-size:16px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk';font-weight:700;
+    transition:border-color .2s,transform .2s;
+  }
+  .icon-btn:hover{border-color:var(--violet);transform:translateY(-1px)}
+  #lang-btn{font-size:12.5px;letter-spacing:.05em}
 </style>
 </head>
 <body>
@@ -432,13 +477,17 @@
   <div class="wrap nav-inner">
     <div class="brand">Rizky<span>.</span>QA</div>
     <nav class="nav-links">
-      <a href="#skills">Skills</a>
-      <a href="#work">Case Studies</a>
-      <a href="#experience">Experience</a>
-      <a href="#interests">Interests</a>
-      <a href="#contact">Contact</a>
+      <a href="#skills" data-i18n="nav-skills">Skills</a>
+      <a href="#work" data-i18n="nav-work">Case Studies</a>
+      <a href="#experience" data-i18n="nav-exp">Experience</a>
+      <a href="#interests" data-i18n="nav-int">Interests</a>
+      <a href="#contact" data-i18n="nav-contact">Contact</a>
       <!-- Download CV: replace href with the path/URL to your CV file -->
-      <a href="https://drive.google.com/file/d/14gwIXgf36U_tGm5SoRvgWM4DmUvtGBgX/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">↓ Download CV</a>
+      <a href="https://drive.google.com/file/d/14gwIXgf36U_tGm5SoRvgWM4DmUvtGBgX/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="cv">↓ Download CV</a>
+      <span class="nav-ctrl">
+        <button class="icon-btn" id="theme-btn" type="button" title="Switch theme">☀️</button>
+        <button class="icon-btn" id="lang-btn" type="button" title="Ganti bahasa / Switch language">ID</button>
+      </span>
     </nav>
   </div>
 </header>
@@ -449,16 +498,16 @@
     <div class="reveal in">
       <span class="eyebrow">Quality Assurance Engineer</span>
       <!-- Tagline — change this line to anything you like -->
-      <h1>Quality assurance for systems that <span class="grad-text">can't afford to fail.</span></h1>
-      <p class="lead">3+ years, Treasury system, core banking and trade finance platforms — turning specifications into airtight test scenarios so every transaction behaves exactly as it should.</p>
+      <h1 data-i18n="hero-h1">Quality assurance for systems that <span class="grad-text">can't afford to fail.</span></h1>
+      <p class="lead" data-i18n="hero-lead">3+ years, Treasury system, core banking and trade finance platforms — turning specifications into airtight test scenarios so every transaction behaves exactly as it should.</p>
       <div class="hero-cta">
         <!-- Download CV: replace href with your CV file -->
-        <a href="https://drive.google.com/file/d/14gwIXgf36U_tGm5SoRvgWM4DmUvtGBgX/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">↓ Download CV</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        <a href="https://drive.google.com/file/d/14gwIXgf36U_tGm5SoRvgWM4DmUvtGBgX/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="cv">↓ Download CV</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero-ghost">Get in touch</a>
       </div>
       <div class="hero-meta">
-        <div class="stat"><div class="n grad-text">3+</div><div class="l">Years in QA</div></div>
-        <div class="stat"><div class="n grad-text">3</div><div class="l">Banking domains</div></div>
+        <div class="stat"><div class="n grad-text">3+</div><div class="l" data-i18n="stat-years">Years in QA</div></div>
+        <div class="stat"><div class="n grad-text">3</div><div class="l" data-i18n="stat-domains">Banking domains</div></div>
         <div class="stat"><div class="n grad-text">E2E</div><div class="l">SIT · UAT · VIT · PTR · Migration</div></div>
       </div>
     </div>
@@ -484,14 +533,14 @@
 <section id="skills" class="section-warm">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">What I bring</span>
-      <h2>Skills &amp; tools</h2>
-      <p>A testing toolkit built around banking systems — where accuracy, traceability, and compliance aren't optional.</p>
+      <span class="eyebrow" data-i18n="sk-eye">What I bring</span>
+      <h2 data-i18n="sk-h2">Skills &amp; tools</h2>
+      <p data-i18n="sk-p">A testing toolkit built around banking systems — where accuracy, traceability, and compliance aren't optional.</p>
     </div>
     <div class="skills-grid">
       <div class="skill-card reveal">
         <span class="kicker">// Domain</span>
-        <h3>Banking &amp; Finance</h3>
+        <h3 data-i18n="sk-c1">Banking &amp; Finance</h3>
         <div class="chips">
           <span class="chip">Treasury Systems</span>
           <span class="chip">Trade Finance</span>
@@ -503,7 +552,7 @@
       </div>
       <div class="skill-card reveal">
         <span class="kicker">// QA</span>
-        <h3>Testing Expertise</h3>
+        <h3 data-i18n="sk-c2">Testing Expertise</h3>
         <div class="chips">
           <span class="chip">Test Scenario Design</span>
           <span class="chip">Test Execution</span>
@@ -514,7 +563,7 @@
       </div>
       <div class="skill-card reveal">
         <span class="kicker">// Tools</span>
-        <h3>Stack &amp; Methods</h3>
+        <h3 data-i18n="sk-c3">Stack &amp; Methods</h3>
         <div class="chips">
           <span class="chip">Jira</span>
           <span class="chip">FIS</span>
@@ -538,9 +587,9 @@
 <section id="work">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Selected work</span>
-      <h2>Case studies</h2>
-      <p>Each project written in <b>STAR</b> format (Situation · Task · Action · Result). Drop your real numbers into the metric panels — the placeholders show exactly what to fill in.</p>
+      <span class="eyebrow" data-i18n="cs-eye">Selected work</span>
+      <h2 data-i18n="cs-h2">Case studies</h2>
+      <p data-i18n="cs-p">Each project written in <b>STAR</b> format (Situation · Task · Action · Result). Drop your real numbers into the metric panels — the placeholders show exactly what to fill in.</p>
     </div>
 
     <div class="cases">
@@ -552,22 +601,22 @@
             <div class="case-id">CASE-001</div>
             <h3>New Treasury Core System (NTCS)</h3>
           </div>
-          <span class="pill">Validated</span>
+          <span class="pill" data-i18n="pill-val">Validated</span>
         </div>
         <div class="case-body">
           <div class="star">
-            <div class="row"><div class="lbl">Situation</div><p>NTCS is a new treasury platform (running on Front Arena) built to replace the bank's existing system, OPICS Summit, and planned to cover roughly 80% of Bank Mandiri's treasury transactions. It spans FX instruments (TOD, TOM, SPOT &amp; derivatives), money market instruments (SBI, T-Bills, government securities/SUN and more), retail sukuk, Repo &amp; Reverse Repo, top-up margin for Repo, and sharia deposit loans.</p></div>
-            <div class="row"><div class="lbl">Task</div><p>I joined at Phase 2 to design test case scenarios from the FSD, TSD, and treasury user requirements. Core E2E SIT&ndash;UAT testing traced every transaction across five screens &mdash; Front Office (FO), Middle Office (MO), Back Office (BO), Reporting, and Accounting &mdash; with my scope covering FO, BO, Reporting, and Accounting, and raising defects in Jira.</p></div>
-            <div class="row"><div class="lbl">Action</div><p>Wrote test scripts and executed scenarios, opening the Reporting screen in Front Arena (Operation &amp; Trading Manager menu) to compare each field against the FSD and raising a Jira ticket on any mismatch. Cross-checked trade data between the front-office and Reporting screens, supported the accounting team in pulling the G/L journal from Front Arena for review, helped treasury users organize testing documentation, and authored a &ldquo;how-to&rdquo; execution guide as formal test documentation.</p></div>
-            <div class="row"><div class="lbl">Result</div><p>Reached a <b>70% pass rate across 4,500+ executed test scenarios</b> (within a 100,000+ scenario suite estimated from Phase 1) in SIT and UAT. Verified that a trade created in Front Office generates correctly, is re-checked against Back Office rules through to <b>BO&nbsp;Confirmed</b> status, populates every mapped field in Reporting, and reconciles against the accounting team's Excel journal. Surfaced defects including numerous field-copy mismatches against the FSD and trade-status bugs.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-sit">Situation</div><p data-i18n="c1-sit">NTCS is a new treasury platform (running on Front Arena) built to replace the bank's existing system, OPICS Summit, and planned to cover roughly 80% of Bank Mandiri's treasury transactions. It spans FX instruments (TOD, TOM, SPOT &amp; derivatives), money market instruments (SBI, T-Bills, government securities/SUN and more), retail sukuk, Repo &amp; Reverse Repo, top-up margin for Repo, and sharia deposit loans.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-task">Task</div><p data-i18n="c1-task">I joined at Phase 2 to design test case scenarios from the FSD, TSD, and treasury user requirements. Core E2E SIT&ndash;UAT testing traced every transaction across five screens &mdash; Front Office (FO), Middle Office (MO), Back Office (BO), Reporting, and Accounting &mdash; with my scope covering FO, BO, Reporting, and Accounting, and raising defects in Jira.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-act">Action</div><p data-i18n="c1-act">Wrote test scripts and executed scenarios, opening the Reporting screen in Front Arena (Operation &amp; Trading Manager menu) to compare each field against the FSD and raising a Jira ticket on any mismatch. Cross-checked trade data between the front-office and Reporting screens, supported the accounting team in pulling the G/L journal from Front Arena for review, helped treasury users organize testing documentation, and authored a &ldquo;how-to&rdquo; execution guide as formal test documentation.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-res">Result</div><p data-i18n="c1-res">Reached a <b>70% pass rate across 4,500+ executed test scenarios</b> (within a 100,000+ scenario suite estimated from Phase 1) in SIT and UAT. Verified that a trade created in Front Office generates correctly, is re-checked against Back Office rules through to <b>BO&nbsp;Confirmed</b> status, populates every mapped field in Reporting, and reconciles against the accounting team's Excel journal. Surfaced defects including numerous field-copy mismatches against the FSD and trade-status bugs.</p></div>
           </div>
           <div class="metrics">
-            <div class="mh">Impact</div>
-            <div class="metric"><span class="mk">Pass rate</span><span class="mv">70%</span></div>
-            <div class="metric"><span class="mk">Scenarios executed (my scope)</span><span class="mv">4,500+</span></div>
-            <div class="metric"><span class="mk">Total scenario suite</span><span class="mv">100,000+</span></div>
-            <div class="metric"><span class="mk">Screens (SIT&ndash;UAT)</span><span class="mv" style="font-size:13px">FO &middot; BO &middot; Reporting &middot; Accounting</span></div>
-            <div class="metric"><span class="mk">Platform</span><span class="mv" style="font-size:13px">Front Arena</span></div>
+            <div class="mh" data-i18n="mh">Impact</div>
+            <div class="metric"><span class="mk" data-i18n="mk-rate">Pass rate</span><span class="mv">70%</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-scope">Scenarios executed (my scope)</span><span class="mv">4,500+</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-suite">Total scenario suite</span><span class="mv">100,000+</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-scr">Screens (SIT&ndash;UAT)</span><span class="mv" style="font-size:13px">FO &middot; BO &middot; Reporting &middot; Accounting</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-plat">Platform</span><span class="mv" style="font-size:13px">Front Arena</span></div>
           </div>
         </div>
       </article>
@@ -579,22 +628,22 @@
             <div class="case-id">CASE-002</div>
             <h3>Trade Finance Migration &mdash; BMCI (Flexcube &rarr; Eximbills)</h3>
           </div>
-          <span class="pill">Validated</span>
+          <span class="pill" data-i18n="pill-val">Validated</span>
         </div>
         <div class="case-body">
           <div class="star">
-            <div class="row"><div class="lbl">Situation</div><p>Regression testing and migration from the legacy system (Flexcube) to a new Trade Finance platform for the overseas branch (KLN) Bank Mandiri Cayman Island (BMCI), running on Eximbills Enterprise (EE) with Swift Alliance Access (SAA).</p></div>
-            <div class="row"><div class="lbl">Task</div><p>Build the regression and migration test suite: execute 700+ UAT test cases (of a 4,000+ total) across Import LC, Export LC, and Bank-to-Bank products, using script templates adapted from another overseas branch (BMHK). Author new test scripts from user requirements and case recommendations from the APD team and internal Digital Wholesale Banking (DWB) officers, and support new users in adopting the trade finance system.</p></div>
-            <div class="row"><div class="lbl">Action</div><p>Adapted the BMHK templates to BMCI's context and ran regression cycles covering field re-checks, end-to-end transactions (notably the BBFM product), and static-data validation. Beyond the reused E2E flow, I added an accounting-reconciliation step: after a trade was created and approved, I coordinated with the ASP group to extract the raw G/L data and passed it to the accounting team to confirm the journal matched the trade booked in the TF application. Coordinated deferred items into the Change Request (CR) circulation, and walked new users through the system.</p></div>
-            <div class="row"><div class="lbl">Result</div><p>Passed <b>700+ test cases</b> (field re-checks and E2E, especially BBFM), with 10 deferred into CR circulation (the application had no active developer support, as the vendor's contract had ended). Identified a <b>cross-currency limitation</b> the live BMHK deployment had never surfaced &mdash; the application was configured for USD only, so EUR trades failed at approval with a &ldquo;currency not balanced&rdquo; error, confirmed with APD as a requirement gap against BMCI's multi-currency need. Also detected a <b>dormant-account anomaly</b> during verification and traced it to the connected Service Operation Architecture (SOA) system, escalating it to the SOA owner rather than logging it against Trade Finance.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-sit">Situation</div><p data-i18n="c2-sit">Regression testing and migration from the legacy system (Flexcube) to a new Trade Finance platform for the overseas branch (KLN) Bank Mandiri Cayman Island (BMCI), running on Eximbills Enterprise (EE) with Swift Alliance Access (SAA).</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-task">Task</div><p data-i18n="c2-task">Build the regression and migration test suite: execute 700+ UAT test cases (of a 4,000+ total) across Import LC, Export LC, and Bank-to-Bank products, using script templates adapted from another overseas branch (BMHK). Author new test scripts from user requirements and case recommendations from the APD team and internal Digital Wholesale Banking (DWB) officers, and support new users in adopting the trade finance system.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-act">Action</div><p data-i18n="c2-act">Adapted the BMHK templates to BMCI's context and ran regression cycles covering field re-checks, end-to-end transactions (notably the BBFM product), and static-data validation. Beyond the reused E2E flow, I added an accounting-reconciliation step: after a trade was created and approved, I coordinated with the ASP group to extract the raw G/L data and passed it to the accounting team to confirm the journal matched the trade booked in the TF application. Coordinated deferred items into the Change Request (CR) circulation, and walked new users through the system.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-res">Result</div><p data-i18n="c2-res">Passed <b>700+ test cases</b> (field re-checks and E2E, especially BBFM), with 10 deferred into CR circulation (the application had no active developer support, as the vendor's contract had ended). Identified a <b>cross-currency limitation</b> the live BMHK deployment had never surfaced &mdash; the application was configured for USD only, so EUR trades failed at approval with a &ldquo;currency not balanced&rdquo; error, confirmed with APD as a requirement gap against BMCI's multi-currency need. Also detected a <b>dormant-account anomaly</b> during verification and traced it to the connected Service Operation Architecture (SOA) system, escalating it to the SOA owner rather than logging it against Trade Finance.</p></div>
           </div>
           <div class="metrics">
-            <div class="mh">Impact</div>
-            <div class="metric"><span class="mk">Test cases passed</span><span class="mv">700+</span></div>
-            <div class="metric"><span class="mk">Total test suite</span><span class="mv">4,000+</span></div>
-            <div class="metric"><span class="mk">Key findings</span><span class="mv">2</span></div>
-            <div class="metric"><span class="mk">Deferred to CR</span><span class="mv">10</span></div>
-            <div class="metric"><span class="mk">Products covered</span><span class="mv" style="font-size:13px">Import LC &middot; Export LC &middot; Bank-to-Bank</span></div>
+            <div class="mh" data-i18n="mh">Impact</div>
+            <div class="metric"><span class="mk" data-i18n="mk-pass">Test cases passed</span><span class="mv">700+</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-total">Total test suite</span><span class="mv">4,000+</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-find">Key findings</span><span class="mv">2</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-def">Deferred to CR</span><span class="mv">10</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-prod">Products covered</span><span class="mv" style="font-size:13px">Import LC &middot; Export LC &middot; Bank-to-Bank</span></div>
           </div>
         </div>
       </article>
@@ -606,21 +655,21 @@
             <div class="case-id">CASE-003</div>
             <h3>Credit Card Billing Fix &mdash; Core Banking</h3>
           </div>
-          <span class="pill">Validated</span>
+          <span class="pill" data-i18n="pill-val">Validated</span>
         </div>
         <div class="case-body">
           <div class="star">
-            <div class="row"><div class="lbl">Situation</div><p>A billing issue surfaced in credit card processing on the core banking system: corporate credit card charges were incorrectly routed into individual customers' bills &mdash; a defect with direct customer and financial impact. A focused 3-month project was set up to resolve and verify the fix.</p></div>
-            <div class="row"><div class="lbl">Task</div><p>Execute 85 test cases from the existing test script, and check and validate valid credit card numbers on IBM AS400, correctly distinguishing individual vs. corporate card accounts.</p></div>
-            <div class="row"><div class="lbl">Action</div><p>Managed test-data provisioning as the main bottleneck: dummy card numbers arrived in bulk batches, but a large share were unusable for AS400 testing (expired or zero-balance), so I filtered and validated a usable set before each cycle. Ran the full 85-case suite on IBM AS400, verifying that corporate charges routed only to corporate bills and individual charges only to individual bills.</p></div>
-            <div class="row"><div class="lbl">Result</div><p>All <b>85 test cases passed</b> with no defects in scope, confirming the billing separation between individual and corporate credit cards was fixed before release. The project timeline was driven largely by test-data readiness rather than execution volume.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-sit">Situation</div><p data-i18n="c3-sit">A billing issue surfaced in credit card processing on the core banking system: corporate credit card charges were incorrectly routed into individual customers' bills &mdash; a defect with direct customer and financial impact. A focused 3-month project was set up to resolve and verify the fix.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-task">Task</div><p data-i18n="c3-task">Execute 85 test cases from the existing test script, and check and validate valid credit card numbers on IBM AS400, correctly distinguishing individual vs. corporate card accounts.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-act">Action</div><p data-i18n="c3-act">Managed test-data provisioning as the main bottleneck: dummy card numbers arrived in bulk batches, but a large share were unusable for AS400 testing (expired or zero-balance), so I filtered and validated a usable set before each cycle. Ran the full 85-case suite on IBM AS400, verifying that corporate charges routed only to corporate bills and individual charges only to individual bills.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-res">Result</div><p data-i18n="c3-res">All <b>85 test cases passed</b> with no defects in scope, confirming the billing separation between individual and corporate credit cards was fixed before release. The project timeline was driven largely by test-data readiness rather than execution volume.</p></div>
           </div>
           <div class="metrics">
-            <div class="mh">Impact</div>
-            <div class="metric"><span class="mk">Test cases passed</span><span class="mv">85 / 85</span></div>
-            <div class="metric"><span class="mk">Pass rate</span><span class="mv">100%</span></div>
-            <div class="metric"><span class="mk">Project duration</span><span class="mv">3 months</span></div>
-            <div class="metric"><span class="mk">Platform</span><span class="mv" style="font-size:13px">Core Banking &middot; IBM AS400</span></div>
+            <div class="mh" data-i18n="mh">Impact</div>
+            <div class="metric"><span class="mk" data-i18n="mk-pass">Test cases passed</span><span class="mv">85 / 85</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-rate">Pass rate</span><span class="mv">100%</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-dur">Project duration</span><span class="mv">3 months</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-plat">Platform</span><span class="mv" style="font-size:13px">Core Banking &middot; IBM AS400</span></div>
           </div>
         </div>
       </article>
@@ -632,22 +681,22 @@
             <div class="case-id">CASE-004</div>
             <h3>RM Tools &mdash; Relationship Manager Platform</h3>
           </div>
-          <span class="pill wip">In progress</span>
+          <span class="pill wip" data-i18n="pill-wip">In progress</span>
         </div>
         <div class="case-body">
           <div class="star">
-            <div class="row"><div class="lbl">Situation</div><p>A new application, developed from the ground up, to manage team groups and monitor transactions across funds, credit, third-party funds (DPK), treasury investment, Kopra, and supply &amp; value chain management. It serves multiple employee segments and roles &mdash; Corporate Banking, Commercial Banking, Treasury Office, Sales Branch Management, and working teams &mdash; across modules including Portfolio, Customer Info, User Management, and Homepage. The full suite of 14,761 scenarios was shared across a QA team of roughly 40 testers, given the large number of role- and segment-based account combinations to verify.</p></div>
-            <div class="row"><div class="lbl">Task</div><p>Design back-office test cases for employee account provisioning (segments and roles per company policy), and execute testing focused on the widget sections and the transaction data pulled from EDA and WDM, confirming API connectivity so the RMT web app renders without errors. Work spanned shakedown, smoke, UAT, regression, and migration phases.</p></div>
-            <div class="row"><div class="lbl">Action</div><p>Wrote the back-office provisioning test cases, then executed 637 test scenarios focused on widget and data validation. For data checks, the EDA team supplied source data into a sheet, which I reconciled field-by-field against the RMT application to confirm consistency. Currently in an idle phase awaiting Phase 1 completion, I run informal daily smoke checks &mdash; regularly catching widgets that lose their API connection and error out in the UI &mdash; and report them.</p></div>
-            <div class="row"><div class="lbl">Result</div><p>Executed <b>637 scenarios</b> (of a 14,761 total suite), with <b>628+ passed</b> and <b>73 defects</b> surfaced &mdash; expected for a newly built application, and evidence of effective early-stage coverage.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-sit">Situation</div><p data-i18n="c4-sit">A new application, developed from the ground up, to manage team groups and monitor transactions across funds, credit, third-party funds (DPK), treasury investment, Kopra, and supply &amp; value chain management. It serves multiple employee segments and roles &mdash; Corporate Banking, Commercial Banking, Treasury Office, Sales Branch Management, and working teams &mdash; across modules including Portfolio, Customer Info, User Management, and Homepage. The full suite of 14,761 scenarios was shared across a QA team of roughly 40 testers, given the large number of role- and segment-based account combinations to verify.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-task">Task</div><p data-i18n="c4-task">Design back-office test cases for employee account provisioning (segments and roles per company policy), and execute testing focused on the widget sections and the transaction data pulled from EDA and WDM, confirming API connectivity so the RMT web app renders without errors. Work spanned shakedown, smoke, UAT, regression, and migration phases.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-act">Action</div><p data-i18n="c4-act">Wrote the back-office provisioning test cases, then executed 637 test scenarios focused on widget and data validation. For data checks, the EDA team supplied source data into a sheet, which I reconciled field-by-field against the RMT application to confirm consistency. Currently in an idle phase awaiting Phase 1 completion, I run informal daily smoke checks &mdash; regularly catching widgets that lose their API connection and error out in the UI &mdash; and report them.</p></div>
+            <div class="row"><div class="lbl" data-i18n="lbl-res">Result</div><p data-i18n="c4-res">Executed <b>637 scenarios</b> (of a 14,761 total suite), with <b>628+ passed</b> and <b>73 defects</b> surfaced &mdash; expected for a newly built application, and evidence of effective early-stage coverage.</p></div>
           </div>
           <div class="metrics">
-            <div class="mh">Impact</div>
-            <div class="metric"><span class="mk">Scenarios executed (mine)</span><span class="mv">637</span></div>
-            <div class="metric"><span class="mk">Test cases passed</span><span class="mv">628+</span></div>
-            <div class="metric"><span class="mk">Defects found</span><span class="mv">73</span></div>
-            <div class="metric"><span class="mk">Total suite (team of ~40)</span><span class="mv">14,761</span></div>
-            <div class="metric"><span class="mk">Phases</span><span class="mv" style="font-size:12px">Shakedown &middot; Smoke &middot; UAT &middot; Regression &middot; Migration</span></div>
+            <div class="mh" data-i18n="mh">Impact</div>
+            <div class="metric"><span class="mk" data-i18n="mk-mine">Scenarios executed (mine)</span><span class="mv">637</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-pass">Test cases passed</span><span class="mv">628+</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-bug">Defects found</span><span class="mv">73</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-team">Total suite (team of ~40)</span><span class="mv">14,761</span></div>
+            <div class="metric"><span class="mk" data-i18n="mk-ph">Phases</span><span class="mv" style="font-size:12px">Shakedown &middot; Smoke &middot; UAT &middot; Regression &middot; Migration</span></div>
           </div>
         </div>
       </article>
@@ -662,8 +711,8 @@
         <div class="sc-body">
           <span class="kicker">// Treasury</span>
           <h3>NTCS</h3>
-          <p>FX Cash trade lifecycle on Front Arena — from booking in Front Office through BO Confirm.</p>
-          <span class="sc-open">View test script →</span>
+          <p data-i18n="sc1-p">FX Cash trade lifecycle on Front Arena — from booking in Front Office through BO Confirm.</p>
+          <span class="sc-open" data-i18n="sc-open">View test script →</span>
         </div>
       </button>
       <button class="script-card" data-modal="modal-tf" type="button">
@@ -674,8 +723,8 @@
         <div class="sc-body">
           <span class="kicker">// Trade Finance</span>
           <h3>Trade Finance — BMCI</h3>
-          <p>Import LC issuance E2E and cross-currency confirmation to SOA on Eximbills Enterprise.</p>
-          <span class="sc-open">View test script →</span>
+          <p data-i18n="sc2-p">Import LC issuance E2E and cross-currency confirmation to SOA on Eximbills Enterprise.</p>
+          <span class="sc-open" data-i18n="sc-open">View test script →</span>
         </div>
       </button>
       <button class="script-card" data-modal="modal-rmt" type="button">
@@ -686,12 +735,12 @@
         <div class="sc-body">
           <span class="kicker">// RM Platform</span>
           <h3>RM Tools</h3>
-          <p>Widget data validation against EDA sources and dashboard availability checks.</p>
-          <span class="sc-open">View test script →</span>
+          <p data-i18n="sc3-p">Widget data validation against EDA sources and dashboard availability checks.</p>
+          <span class="sc-open" data-i18n="sc-open">View test script →</span>
         </div>
       </button>
     </div>
-    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:16px">
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:16px" data-i18n="sc-cap">
       ↑ Click a card to open an excerpt of my <b>real test scenario scripts</b> — scenarios, test data, steps, and expected results.
     </p>
 
@@ -852,13 +901,13 @@
         <span>regression_run — session #47</span>
       </div>
       <div class="live-stats">
-        <div class="lv"><span class="lv-num" id="lv-exec">11,767</span><span class="lv-lbl">Test cases executed</span></div>
-        <div class="lv"><span class="lv-num green" id="lv-pass">11,032</span><span class="lv-lbl">Passed</span></div>
-        <div class="lv"><span class="lv-num red" id="lv-def">112</span><span class="lv-lbl">Defects raised</span></div>
-        <div class="lv"><span class="lv-num red" id="lv-open">3</span><span class="lv-lbl">Open — chasing down</span></div>
+        <div class="lv"><span class="lv-num" id="lv-exec">5,932</span><span class="lv-lbl" data-i18n="lv1">Test cases executed</span></div>
+        <div class="lv"><span class="lv-num green" id="lv-pass">4,563</span><span class="lv-lbl" data-i18n="lv2">Passed</span></div>
+        <div class="lv"><span class="lv-num red" id="lv-def">1,369</span><span class="lv-lbl" data-i18n="lv3">Failed</span></div>
+        <div class="lv"><span class="lv-num red" id="lv-open">3</span><span class="lv-lbl" data-i18n="lv4">Open — chasing down</span></div>
       </div>
       <div class="live-log" id="lv-log">▸ TC_1B_FX_SPOT_0421 ... <span class="ok">PASS</span></div>
-      <div class="live-note">// simulated feed — the real numbers live in the case studies above 😉</div>
+      <div class="live-note" data-i18n="lv-note">// simulated feed — the real numbers live in the case studies above 😉</div>
     </div>
   </div>
 </section>
@@ -867,9 +916,9 @@
 <section id="experience" class="section-warm">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Track record</span>
-      <h2>Experience</h2>
-      <p>A QA path rooted in high-stakes banking environments.</p>
+      <span class="eyebrow" data-i18n="ex-eye">Track record</span>
+      <h2 data-i18n="ex-h2">Experience</h2>
+      <p data-i18n="ex-p">A QA path rooted in high-stakes banking environments.</p>
     </div>
     <div class="timeline">
       <div class="tl-item reveal">
@@ -877,11 +926,11 @@
         <h3>Software Quality Assurance (Manual)</h3>
         <div class="org">PT Adidata Informatika · assigned on-site as QA consultant for PT Bank Mandiri (Persero) Tbk</div>
         <ul>
-          <li>Analyzed FSD, TSD, and TMP documents to define accurate testing scope across banking modules.</li>
-          <li>Designed and executed E2E and system integration test scenarios for core banking, treasury, and trade finance platforms.</li>
-          <li>Logged and tracked defects in Jira, coordinating remediation with development teams through to closure.</li>
-          <li>Collaborated with Application Development (APD) teams and Product Owners to clarify requirements and validate fixes.</li>
-          <li>Acted as functional liaison, explaining transaction flows and expected behavior to end users during SIT.</li>
+          <li data-i18n="ex-li1">Analyzed FSD, TSD, and TMP documents to define accurate testing scope across banking modules.</li>
+          <li data-i18n="ex-li2">Designed and executed E2E and system integration test scenarios for core banking, treasury, and trade finance platforms.</li>
+          <li data-i18n="ex-li3">Logged and tracked defects in Jira, coordinating remediation with development teams through to closure.</li>
+          <li data-i18n="ex-li4">Collaborated with Application Development (APD) teams and Product Owners to clarify requirements and validate fixes.</li>
+          <li data-i18n="ex-li5">Acted as functional liaison, explaining transaction flows and expected behavior to end users during SIT.</li>
         </ul>
       </div>
       <!-- Add more roles here as you grow. Copy a .tl-item block and edit it. -->
@@ -898,7 +947,7 @@
 
     <!-- TRAINING & CERTIFICATIONS (keep this small & quiet) -->
     <div class="reveal" style="margin-top:44px;padding-top:22px;border-top:1px solid var(--line)">
-      <span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Training &amp; Certifications</span>
+      <span style="font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)" data-i18n="cert-lbl">Training &amp; Certifications</span>
       <div class="certs">
         <div class="cert">
           <img src="cscu.png" alt="CSCU certificate" onerror="this.style.display='none'">
@@ -923,9 +972,9 @@
 <section id="interests">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Outside the day job</span>
-      <h2>Interests &amp; side projects</h2>
-      <p>Where my curiosity goes when I'm off the clock — AI, agentic systems, and automation. A few of these are hands-on personal builds.</p>
+      <span class="eyebrow" data-i18n="in-eye">Outside the day job</span>
+      <h2 data-i18n="in-h2">Interests &amp; side projects</h2>
+      <p data-i18n="in-p">Where my curiosity goes when I'm off the clock — AI, agentic systems, and automation. A few of these are hands-on personal builds.</p>
     </div>
     <div class="proj-grid">
 
@@ -948,7 +997,7 @@
             <span class="chip">OpenClaw</span>
             <span class="chip">Automation</span>
           </div>
-          <a class="proj-link" href="project-agentic.html">View project →</a>
+          <a class="proj-link" href="project-agentic.html" data-i18n="view-proj">View project →</a>
         </div>
       </div>
 
@@ -971,7 +1020,7 @@
             <span class="chip">UiPath</span>
             <span class="chip">Lorem</span>
           </div>
-          <a class="proj-link" href="project-automation.html">View project →</a>
+          <a class="proj-link" href="project-automation.html" data-i18n="view-proj">View project →</a>
         </div>
       </div>
     </div>
@@ -983,12 +1032,12 @@
   <div class="wrap">
     <div class="quote reveal testi-soon">
       <div class="mark float">&ldquo;</div>
-      <div class="soon-badge">
+      <div class="soon-badge" data-i18n="ts-badge">
         <span class="pulse"></span>
         TESTIMONIALS · IN PROGRESS
       </div>
-      <blockquote class="soon-text">Collecting a few words from the leads, teammates, and users I've tested with. Check back soon.</blockquote>
-      <div class="by">— Coming soon</div>
+      <blockquote class="soon-text" data-i18n="ts-text">Collecting a few words from the leads, teammates, and users I've tested with. Check back soon.</blockquote>
+      <div class="by" data-i18n="ts-by">— Coming soon</div>
     </div>
   </div>
 </section>
@@ -997,8 +1046,8 @@
 <section id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
-      <h2>Let's talk quality.</h2>
-      <p>Open to QA opportunities in banking, fintech, and beyond. Reach out through any channel below.</p>
+      <h2 data-i18n="ct-h2">Let's talk quality.</h2>
+      <p data-i18n="ct-p">Open to QA opportunities in banking, fintech, and beyond. Reach out through any channel below.</p>
       <div class="contact-links">
         <a class="clink" href="mailto:rizkyaji247@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
@@ -1067,7 +1116,7 @@
   lightbox.addEventListener('click', closeLightbox);
 
   // Live testing panel — simulated feed
-  const lvState = { exec: 11767, pass: 11032, def: 112, open: 3 };
+  const lvState = { exec: 5932, pass: 4563, def: 1369, open: 3 };
   const lvFmt = n => n.toLocaleString('en-US');
   const lvBump = (id, val) => {
     const el = document.getElementById(id);
@@ -1120,6 +1169,135 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+
+  // ============ THEME SWITCHER ============
+  const themeBtn = document.getElementById('theme-btn');
+  const themeOrder = ['light', 'dark', 'cyber'];
+  const themeIcons = { light: '\u2600\uFE0F', dark: '\uD83C\uDF19', cyber: '\u26A1' };
+  let curTheme = localStorage.getItem('theme') || 'light';
+  if (!themeOrder.includes(curTheme)) curTheme = 'light';
+  const applyTheme = t => {
+    if (t === 'light') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', t);
+    themeBtn.textContent = themeIcons[t];
+    localStorage.setItem('theme', t);
+  };
+  applyTheme(curTheme);
+  themeBtn.addEventListener('click', () => {
+    curTheme = themeOrder[(themeOrder.indexOf(curTheme) + 1) % themeOrder.length];
+    applyTheme(curTheme);
+  });
+
+  // ============ LANGUAGE SWITCHER (EN / ID) ============
+  const I18N_ID = {
+    'nav-skills': 'Keahlian',
+    'nav-work': 'Studi Kasus',
+    'nav-exp': 'Pengalaman',
+    'nav-int': 'Minat',
+    'nav-contact': 'Kontak',
+    'cv': '\u2193 Unduh CV',
+    'hero-h1': 'Quality assurance untuk sistem yang <span class="grad-text">tak boleh gagal.</span>',
+    'hero-lead': '3+ tahun di sistem Treasury, core banking, dan platform trade finance \u2014 mengubah spesifikasi menjadi skenario tes yang rapat agar setiap transaksi berperilaku persis sebagaimana mestinya.',
+    'hero-ghost': 'Hubungi saya',
+    'stat-years': 'Tahun di QA',
+    'stat-domains': 'Domain perbankan',
+    'sk-eye': 'Yang saya bawa',
+    'sk-h2': 'Keahlian &amp; tools',
+    'sk-p': 'Perangkat testing yang dibangun di sekitar sistem perbankan \u2014 tempat akurasi, keterlacakan, dan kepatuhan bukanlah pilihan.',
+    'sk-c1': 'Perbankan &amp; Keuangan',
+    'sk-c2': 'Keahlian Testing',
+    'sk-c3': 'Stack &amp; Metode',
+    'cs-eye': 'Karya pilihan',
+    'cs-h2': 'Studi kasus',
+    'cs-p': 'Setiap project ditulis dalam format <b>STAR</b> (Situation \u00B7 Task \u00B7 Action \u00B7 Result), lengkap dengan angka hasil eksekusi pada panel metrik.',
+    'lbl-sit': 'Situasi',
+    'lbl-task': 'Tugas',
+    'lbl-act': 'Aksi',
+    'lbl-res': 'Hasil',
+    'pill-val': 'Tervalidasi',
+    'pill-wip': 'Berjalan',
+    'mh': 'Dampak',
+    'mk-rate': 'Tingkat kelulusan',
+    'mk-scope': 'Skenario dieksekusi (cakupan saya)',
+    'mk-suite': 'Total suite skenario',
+    'mk-scr': 'Screen (SIT\u2013UAT)',
+    'mk-plat': 'Platform',
+    'mk-pass': 'Test case lulus',
+    'mk-total': 'Total test suite',
+    'mk-find': 'Temuan kunci',
+    'mk-def': 'Ditunda ke CR',
+    'mk-prod': 'Produk yang dicakup',
+    'mk-dur': 'Durasi project',
+    'mk-mine': 'Skenario dieksekusi (saya)',
+    'mk-bug': 'Defect ditemukan',
+    'mk-team': 'Total suite (tim ~40 orang)',
+    'mk-ph': 'Fase',
+    'c1-sit': 'NTCS adalah platform treasury baru (berjalan di Front Arena) yang dibangun untuk menggantikan sistem existing bank, OPICS Summit, dan direncanakan mencakup sekitar 80% transaksi treasury Bank Mandiri. Cakupannya meliputi instrumen FX (TOD, TOM, SPOT &amp; derivatif), instrumen pasar uang (SBI, T-Bills, surat berharga negara/SUN, dan lainnya), sukuk retail, Repo &amp; Reverse Repo, top-up margin untuk Repo, serta pinjaman deposito syariah.',
+    'c1-task': 'Saya bergabung di Phase 2 untuk merancang skenario test case dari FSD, TSD, dan kebutuhan user treasury. Pengujian inti E2E SIT\u2013UAT menelusuri setiap transaksi di lima screen \u2014 Front Office (FO), Middle Office (MO), Back Office (BO), Reporting, dan Accounting \u2014 dengan cakupan saya meliputi FO, BO, Reporting, dan Accounting, serta melaporkan defect di Jira.',
+    'c1-act': 'Menulis test script dan mengeksekusi skenario, membuka screen Reporting di Front Arena (menu Operation &amp; Trading Manager) untuk membandingkan setiap field dengan FSD dan membuat tiket Jira untuk setiap ketidaksesuaian. Mengecek silang data trade antara screen front office dan Reporting, mendukung tim accounting menarik jurnal G/L dari Front Arena untuk di-review, membantu user treasury merapikan dokumentasi pengujian, dan menyusun panduan eksekusi \u201Chow-to\u201D sebagai dokumentasi tes formal.',
+    'c1-res': 'Mencapai <b>pass rate 70% dari 4.500+ skenario tes yang dieksekusi</b> (dari suite 100.000+ skenario hasil estimasi Phase 1) di SIT dan UAT. Memverifikasi bahwa trade yang dibuat di Front Office ter-generate dengan benar, dicek ulang terhadap aturan Back Office hingga status <b>BO&nbsp;Confirmed</b>, mengisi semua field yang terpetakan di Reporting, dan terekonsiliasi dengan jurnal Excel tim accounting. Menemukan defect termasuk banyak ketidaksesuaian penyalinan field terhadap FSD dan bug status trade.',
+    'c2-sit': 'Pengujian regresi dan migrasi dari sistem lama (Flexcube) ke platform Trade Finance baru untuk kantor luar negeri (KLN) Bank Mandiri Cayman Island (BMCI), berjalan di Eximbills Enterprise (EE) dengan Swift Alliance Access (SAA).',
+    'c2-task': 'Membangun suite tes regresi dan migrasi: mengeksekusi 700+ test case UAT (dari total 4.000+) untuk produk Import LC, Export LC, dan Bank-to-Bank, menggunakan template script yang diadaptasi dari KLN lain (BMHK). Menyusun test script baru dari kebutuhan user dan rekomendasi case dari tim APD serta officer internal Digital Wholesale Banking (DWB), dan mendampingi user baru mengadopsi sistem trade finance.',
+    'c2-act': 'Mengadaptasi template BMHK ke konteks BMCI dan menjalankan siklus regresi yang mencakup pengecekan ulang field, transaksi end-to-end (terutama produk BBFM), dan validasi static data. Di luar alur E2E yang dipakai ulang, saya menambahkan langkah rekonsiliasi accounting: setelah trade dibuat dan disetujui, saya berkoordinasi dengan grup ASP untuk menarik data mentah G/L dan menyerahkannya ke tim accounting guna memastikan jurnal sesuai dengan trade yang dibukukan di aplikasi TF. Mengoordinasikan item yang ditunda ke sirkulasi Change Request (CR), dan memandu user baru memahami sistem.',
+    'c2-res': 'Meluluskan <b>700+ test case</b> (pengecekan ulang field dan E2E, terutama BBFM), dengan 10 ditunda ke sirkulasi CR (aplikasi tidak lagi memiliki dukungan developer aktif karena kontrak vendor telah berakhir). Mengidentifikasi <b>keterbatasan cross-currency</b> yang tidak pernah muncul di deployment BMHK yang sudah live \u2014 aplikasi hanya dikonfigurasi untuk USD sehingga trade EUR gagal saat approval dengan error \u201Ccurrency not balanced\u201D, dikonfirmasi bersama APD sebagai gap requirement terhadap kebutuhan multi-currency BMCI. Juga menemukan <b>anomali akun dormant</b> saat verifikasi dan melacaknya ke sistem Service Operation Architecture (SOA) yang terhubung, lalu mengeskalasikannya ke pemilik SOA alih-alih mencatatnya sebagai defect Trade Finance.',
+    'c3-sit': 'Muncul isu penagihan pada pemrosesan kartu kredit di sistem core banking: tagihan kartu kredit korporat salah masuk ke tagihan nasabah individu \u2014 defect dengan dampak langsung ke nasabah dan finansial. Project terfokus selama 3 bulan dibentuk untuk menyelesaikan dan memverifikasi perbaikannya.',
+    'c3-task': 'Mengeksekusi 85 test case dari test script yang sudah ada, serta mengecek dan memvalidasi nomor kartu kredit yang valid di IBM AS400, dengan membedakan akun kartu individu vs. korporat secara tepat.',
+    'c3-act': 'Mengelola penyediaan test data sebagai bottleneck utama: nomor kartu dummy datang dalam batch besar, tetapi sebagian besar tidak layak untuk pengujian AS400 (kedaluwarsa atau bersaldo nol), sehingga saya menyaring dan memvalidasi set yang bisa dipakai sebelum tiap siklus. Menjalankan seluruh 85 test case di IBM AS400, memverifikasi bahwa tagihan korporat hanya masuk ke tagihan korporat dan tagihan individu hanya ke tagihan individu.',
+    'c3-res': 'Seluruh <b>85 test case lulus</b> tanpa defect dalam cakupan, memastikan pemisahan penagihan antara kartu kredit individu dan korporat telah diperbaiki sebelum rilis. Durasi project lebih banyak ditentukan oleh kesiapan test data daripada volume eksekusi.',
+    'c4-sit': 'Aplikasi baru yang dikembangkan dari nol untuk mengelola grup tim dan memonitor transaksi dana, kredit, dana pihak ketiga (DPK), investasi treasury, Kopra, serta supply &amp; value chain management. Melayani berbagai segmen dan role karyawan \u2014 Corporate Banking, Commercial Banking, Treasury Office, Sales Branch Management, dan working team \u2014 mencakup modul Portfolio, Customer Info, User Management, dan Homepage. Suite penuh berisi 14.761 skenario dibagi ke tim QA sekitar 40 tester, mengingat banyaknya kombinasi akun berbasis role dan segmen yang harus diverifikasi.',
+    'c4-task': 'Merancang test case back-office untuk provisioning akun karyawan (segmen dan role sesuai kebijakan perusahaan), dan mengeksekusi pengujian yang berfokus pada section widget serta data transaksi yang ditarik dari EDA dan WDM, memastikan konektivitas API agar aplikasi web RMT ter-render tanpa error. Pekerjaan mencakup fase shakedown, smoke, UAT, regresi, dan migrasi.',
+    'c4-act': 'Menulis test case provisioning back-office, lalu mengeksekusi 637 skenario tes yang berfokus pada validasi widget dan data. Untuk pengecekan data, tim EDA menyediakan data sumber dalam sheet, yang saya rekonsiliasi field demi field dengan aplikasi RMT untuk memastikan konsistensi. Saat ini dalam fase idle menunggu penyelesaian Phase 1, saya menjalankan smoke check harian informal \u2014 rutin menangkap widget yang kehilangan koneksi API dan error di UI \u2014 lalu melaporkannya.',
+    'c4-res': 'Mengeksekusi <b>637 skenario</b> (dari total suite 14.761), dengan <b>628+ lulus</b> dan <b>73 defect</b> ditemukan \u2014 wajar untuk aplikasi yang baru dibangun, sekaligus bukti cakupan tahap awal yang efektif.',
+    'sc1-p': 'Siklus hidup trade FX Cash di Front Arena \u2014 dari booking di Front Office hingga BO Confirm.',
+    'sc2-p': 'Penerbitan Import LC secara E2E dan konfirmasi cross-currency ke SOA di Eximbills Enterprise.',
+    'sc3-p': 'Validasi data widget terhadap sumber EDA dan pengecekan ketersediaan dashboard.',
+    'sc-open': 'Lihat test script \u2192',
+    'sc-cap': '\u2191 Klik salah satu card untuk membuka cuplikan <b>test scenario script asli</b> saya \u2014 skenario, test data, langkah, dan expected result.',
+    'lv1': 'Test case dieksekusi',
+    'lv2': 'Lulus',
+    'lv3': 'Gagal',
+    'lv4': 'Open \u2014 sedang dikejar',
+    'lv-note': '// feed simulasi \u2014 angka aslinya ada di studi kasus di atas \uD83D\uDE09',
+    'ex-eye': 'Rekam jejak',
+    'ex-h2': 'Pengalaman',
+    'ex-p': 'Perjalanan QA yang berakar di lingkungan perbankan berisiko tinggi.',
+    'ex-li1': 'Menganalisis dokumen FSD, TSD, dan TMP untuk menentukan cakupan pengujian yang akurat di berbagai modul perbankan.',
+    'ex-li2': 'Merancang dan mengeksekusi skenario tes E2E dan integrasi sistem untuk platform core banking, treasury, dan trade finance.',
+    'ex-li3': 'Mencatat dan melacak defect di Jira, mengoordinasikan perbaikan dengan tim pengembang hingga tuntas.',
+    'ex-li4': 'Berkolaborasi dengan tim Application Development (APD) dan Product Owner untuk memperjelas kebutuhan dan memvalidasi perbaikan.',
+    'ex-li5': 'Berperan sebagai penghubung fungsional, menjelaskan alur transaksi dan perilaku yang diharapkan kepada pengguna selama SIT.',
+    'cert-lbl': 'Pelatihan &amp; Sertifikasi',
+    'in-eye': 'Di luar pekerjaan',
+    'in-h2': 'Minat &amp; project sampingan',
+    'in-p': 'Ke mana rasa penasaran saya pergi di luar jam kerja \u2014 AI, sistem agentic, dan otomasi. Beberapa di antaranya project personal yang saya bangun langsung.',
+    'view-proj': 'Lihat project \u2192',
+    'ts-badge': '<span class="pulse"></span> TESTIMONI \u00B7 SEDANG DIKUMPULKAN',
+    'ts-text': 'Sedang mengumpulkan beberapa kata dari para lead, rekan tim, dan user yang pernah bekerja sama dengan saya. Nantikan segera.',
+    'ts-by': '\u2014 Segera hadir',
+    'ct-h2': 'Mari bicara kualitas.',
+    'ct-p': 'Terbuka untuk peluang QA di perbankan, fintech, dan bidang lainnya. Hubungi saya melalui kanal mana pun di bawah ini.'
+  };
+  const langBtn = document.getElementById('lang-btn');
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const i18nOrig = new Map();
+  i18nEls.forEach(el => i18nOrig.set(el, el.innerHTML));
+  let curLang = localStorage.getItem('lang') || 'en';
+  if (curLang !== 'id') curLang = 'en';
+  const applyLang = l => {
+    document.documentElement.lang = l;
+    i18nEls.forEach(el => {
+      const k = el.dataset.i18n;
+      if (l === 'id' && I18N_ID[k]) el.innerHTML = I18N_ID[k];
+      else el.innerHTML = i18nOrig.get(el);
+    });
+    langBtn.textContent = (l === 'en') ? 'ID' : 'EN';
+    localStorage.setItem('lang', l);
+  };
+  applyLang(curLang);
+  langBtn.addEventListener('click', () => {
+    curLang = (curLang === 'en') ? 'id' : 'en';
+    applyLang(curLang);
+  });
 </script>
 </body>
 </html>
