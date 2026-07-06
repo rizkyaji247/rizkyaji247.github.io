@@ -218,6 +218,11 @@
   .artifact-table td{line-height:1.55}
   .artifact-table th,.artifact-table td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
   .artifact-table tbody td{border-bottom:2px solid rgba(27,22,51,.30)}
+  /* Excel-style grid lines, theme-aware */
+  .artifact-table th{border-right:1px solid rgba(255,255,255,.16)}
+  .artifact-table td{border-right:1px dashed color-mix(in srgb, var(--violet) 26%, transparent)}
+  .artifact-table th:last-child,.artifact-table td:last-child{border-right:0}
+  .artifact-table tbody tr:hover td{box-shadow:inset 0 0 0 999px color-mix(in srgb, var(--violet) 5%, transparent)}
   .artifact-table th{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.92);background:var(--panel)}
   .artifact-table td.tc{font-family:'JetBrains Mono';color:var(--violet);font-weight:500}
   .artifact-table td.c-scn{background:rgba(255,122,89,.09)}
