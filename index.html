@@ -224,6 +224,10 @@
   .artifact-table td.c-desc{background:rgba(109,74,255,.07);font-weight:600}
   .artifact-table td.c-desc b{font-weight:800}
   .artifact-table td.c-tcid{background:rgba(109,74,255,.07)}
+  .artifact-table td.r-pass{color:var(--pass);background:var(--pass-bg);font-family:'JetBrains Mono';font-size:12px;font-weight:700}
+  .artifact-table td.r-fail{color:#C93A47;background:rgba(224,82,96,.13);font-family:'JetBrains Mono';font-size:12px;font-weight:700}
+  .artifact-table td.r-blocked{color:#B4444E;background:rgba(255,150,150,.22);font-family:'JetBrains Mono';font-size:11.5px;font-weight:700}
+  .artifact-table td.r-review{color:#C77414;background:rgba(255,192,0,.16);font-family:'JetBrains Mono';font-size:11.5px;font-weight:700}
   .artifact-table td.c-step{background:var(--pass-bg);color:var(--pass);font-family:'JetBrains Mono';font-size:12px;font-weight:600}
   .st-pass{color:var(--pass);font-weight:700;font-family:'JetBrains Mono';font-size:12px}
   .st-fail{color:#E05260;font-weight:700;font-family:'JetBrains Mono';font-size:12px}
@@ -726,7 +730,7 @@
         <div class="sc-body">
           <span class="kicker">// Trade Finance</span>
           <h3>Trade Finance — BMCI</h3>
-          <p data-i18n="sc2-p">Import LC issuance E2E and cross-currency confirmation to SOA on Eximbills Enterprise.</p>
+          <p data-i18n="sc2-p">Bank-to-Bank Financing (BBFM) E2E on Eximbills Enterprise — maker–checker flow, tracers, and past-due settlement, including the cross-currency defect (BMCI-05).</p>
           <span class="sc-open" data-i18n="sc-open">View test script →</span>
         </div>
       </button>
@@ -738,7 +742,7 @@
         <div class="sc-body">
           <span class="kicker">// RM Platform</span>
           <h3>RM Tools</h3>
-          <p data-i18n="sc3-p">Widget data validation against EDA sources and dashboard availability checks.</p>
+          <p data-i18n="sc3-p">Back-office user management E2E — adding, editing, and deleting employees and roles through maker–checker approval flows.</p>
           <span class="sc-open" data-i18n="sc-open">View test script →</span>
         </div>
       </button>
@@ -806,40 +810,142 @@
           <button class="m-close" type="button" aria-label="Close">✕</button>
         </div>
         <div class="artifact-scroll">
-          <table class="artifact-table">
+          <table class="artifact-table" style="min-width:3900px">
             <thead>
-              <tr><th>Scenario ID</th><th>Scenario Description</th><th>Test Case ID</th><th>Test Case Description</th><th>Pre-requisites</th><th>Test Data</th><th>Environment</th><th>Step Number</th><th>Test Step</th><th>Expected Result</th><th>Test Type</th><th>Assignee</th><th>Label</th></tr>
+              <tr><th style="min-width:210px">Scenario ID</th><th style="min-width:240px">Scenario Description</th><th style="min-width:230px">Test Case ID</th><th style="min-width:240px">Test Case Description</th><th style="min-width:220px">Pre-Requisite</th><th style="min-width:80px">Step No</th><th style="min-width:480px">Test Step</th><th style="min-width:420px">Expected Result</th><th style="min-width:260px">Test Data</th><th style="min-width:90px">Environment</th><th style="min-width:90px">Type</th><th style="min-width:110px">Result TQA</th><th style="min-width:170px">Assign TQA</th><th style="min-width:110px">Result OBN</th><th style="min-width:120px">Assign OBN</th><th style="min-width:120px">Result BMCI</th><th style="min-width:120px">Assign BMCI</th><th style="min-width:190px">Label</th><th style="min-width:160px">Note</th><th style="min-width:130px">Ticket Defect</th></tr>
             </thead>
             <tbody>
               <tr>
-                <td class="tc c-scn">TF_BMCI_ImportLC_SCN001</td>
-                <td class="c-desc">Import LC issuance end-to-end for BMCI customer</td>
-                <td class="tc c-tcid">TF_BMCI_ImportLC_SCN_001_TC001</td>
-                <td>Create and authorize Import LC issuance</td>
-                <td>Login as <b>maker</b>; customer &amp; static data registered</td>
-                <td>LC amount: USD 50,000<br>Beneficiary: overseas bank<br>Product: Import LC</td>
-                <td>Regression</td>
+                <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
+                <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
+                <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_001</td>
+                <td><b>EE - Maker<br></b>Register&amp;Process BBFM :<br>Fill in the field according to the instructions until Confirm Transaction</td>
+                <td>Document Presentation (STP) Function<br>- Main Tab<br>- Parties Tab<br>- Charge Tab<br>- Payment Tab<br>- Message Tab<br>- Diary Tab</td>
                 <td class="c-step">Step 1</td>
-                <td>1. Create Import LC issuance as maker and submit<br>2. Login as checker and authorize the LC</td>
-                <td>1. LC record created with <b>pending-authorization</b> status<br>2. LC issued successfully and <b>MT700</b> generated to SAA</td>
+                <td>1. Login as <b>User Maker<br></b>2. Choose Bank to Bank Financing Module<br>3. <b>Main Tab</b> : <br>- Select transaction flag from dropdown list : <b>xxx<br></b>- Currency<b> : USD/EUR<br></b>- Input Principal Amount: USD <b>xxx<br></b>- Input Takedown date: 27/05/2024<br>- Input Days: 7<br>- Input Source of Fund:<b> xxx<br></b>- Sublimit ID : <b>xxx<br></b>4. <b>Charge Tab</b>  :<br>- Charges : <b>Transaction / Deferred / <br></b>5.<b> Payment Tab<br></b>- Go to <b>Credit </b>tab menu<br>- select account type: <b>xxx<br></b>- account owner ID: <b>xxx<br></b>- payment advice message: MT<b>xxx<br></b>- credit value date: 27/05/2024<br>- Click on<b> MTxxx</b> Tab<br>- Input related reference no : <b>xxx<br></b>- Select receiver bank: <b>xxx<br></b>- Select beneficiary institution: <b>xxx<br></b>- Click save<br>6. <b>Message Tab</b> are Optionally to fill<br>7. <b>Diary Tab</b> are Optionally to fill<br>8. Check Voucher in Button <b>View-Voucher<br></b>9. Confirm Transaction</td>
+                <td>1. Successful login and choose BBFM Module<br>2. Successful Fill field and check Voucher<br>3. Successful Confirm Transaction</td>
+                <td>BBFM Module<br>Transaction flag from dropdown list : <b>xxx<br></b>Select EBD flag from dropdown list: <b>xxx</b></td>
+                <td>UAT</td>
                 <td>Positive</td>
-                <td>adidata.muhamad</td>
-                <td class="tc">TF_BMCI_IMPORT_LC</td>
+                <td class="r-pass">Pass</td>
+                <td>adidata.muhammad aji</td>
+                <td class="r-pass">Pass</td>
+                <td>OBN QA</td>
+                <td class="r-pass">PASS</td>
+                <td>BMCI User</td>
+                <td class="tc">UAT_BBFM_25000263</td>
+                <td></td>
+                <td class="tc"></td>
               </tr>
               <tr>
-                <td class="tc c-scn">TF_BMCI_ImportLC_SCN002</td>
-                <td class="c-desc">Cross-currency trade confirmation to SOA</td>
-                <td class="tc c-tcid">TF_BMCI_ImportLC_SCN_002_TC001</td>
-                <td>Confirm trade using two different currencies to SOA</td>
-                <td>Approved trade with <b>dual currency</b> exists</td>
-                <td>Trade currency: EUR<br>Settlement account: USD</td>
-                <td>Regression</td>
+                <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
+                <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
+                <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_002</td>
+                <td><b>EE - Checker - </b>Release Transaction<br><b>Supervisor Release - BBFM</b> and Check <b>Eloan Voucher</b></td>
+                <td>BBFM Supervisor</td>
                 <td class="c-step">Step 1</td>
-                <td>1. Open the approved cross-currency trade<br>2. Trigger confirmation to <b>SOA</b></td>
-                <td>1. Trade details displayed correctly<br>2. Trade confirmed to <b>SOA</b> without error</td>
-                <td>Negative</td>
-                <td>adidata.muhamad</td>
-                <td class="tc">TF_BMCI_IMPORT_LC</td>
+                <td>1. Login as <b>User Checker<br></b>2. Open Menu BBFM Supervisor -&gt; Search by Ref Number -&gt; Check Transaction and <b>Release</b> Transaction<br>3. Open Menu e-Loan Voucher -&gt; Search by Ref Number - &gt; Check data <br>4. Open Menu <b>BBFM Supervisor -&gt; Enquire Master -&gt; Search by Ref Number - &gt; </b>Check <b>Status Transaction , Voucher Transaction , Swift , Gapi and Lmt-Info </b></td>
+                <td>1. Successful Login Checker User<br>2. Successful Release Transaction<br>3. Success display e-Loan voucher Transaction and All Field Validation and Calculation are correct from retrive Transaction<br>4. Successful display Status trx, all field data, voucher, Transaction, Gapi and Lmt-Info</td>
+                <td>Status Transaction in Enquire Master must be  <b>(M)<br></b>All Field must be same from previous Function</td>
+                <td>UAT</td>
+                <td>Positive</td>
+                <td class="r-fail">Fail</td>
+                <td>adidata.muhammad aji</td>
+                <td class="r-fail">Fail</td>
+                <td>OBN QA</td>
+                <td class="r-fail">Fail</td>
+                <td>BMCI User</td>
+                <td class="tc">UAT_BBFM_25000263</td>
+                <td>Cross Currency Issue</td>
+                <td class="tc">BMCI-05</td>
+              </tr>
+              <tr>
+                <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
+                <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
+                <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_004</td>
+                <td>EE - <b>Maker - Checker  Tracer to Counter Party<br></b>Confirm Tracer with <b>Maker Account</b> and then Release With <b>Checker User</b></td>
+                <td>Tracer to Counter Party</td>
+                <td class="c-step">Step 1</td>
+                <td>1. Login as<b> Maker Account</b> and Open Tracer <b>Counter Party</b> menu <br>2. Search by BBFM Reference Number status must be (<b> P</b> )<br>3. Check Main Tab<br>4. Check Parties Tab<br>5. Check Diary &amp; Notes<br>6. <b>Confirm</b> Transaction<br>7. Login as<b> Checker Account</b> andopen BBFM Supervisor Menu - &gt; Search by Reference Number -&gt; Check all data - &gt; Release Transaction.<br>8. Open Enquire Master menu and search by BBFM refrence Number - &gt; Check Transaction and Status Must be ( <b>M</b> ) </td>
+                <td>1. Successful open <b>Tracer to Counterparty</b> Menu<br>2. Successful Search existing BBFM Reference Number<br>3. All Field Retrieve from <b>Previous Function </b>(Register BBFM Menu) and All Field Validation and Calculation are correct<br>4. All Field Retrieve from Previous Function (Register BBFM Menu) and All Field Validation and Calculation are correct<br>5. All Field Retrieve from Previous Function (Register BBFM Menu) and All Field Validation and Calculation are correct<br>6. Successful Confirmed Transaction<br>7. Successful login as User Checker and succes release Transaction<br>8. All data same with previous Function and transaction status is  ( <b>M </b>) </td>
+                <td></td>
+                <td>UAT</td>
+                <td>Positive</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>adidata.muhammad aji</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>OBN QA</td>
+                <td class="r-review">USER REVIEW</td>
+                <td>BMCI User</td>
+                <td class="tc">UAT_BBFM_25000263</td>
+                <td></td>
+                <td class="tc">Blocked by Ticket BMCI-05</td>
+              </tr>
+              <tr>
+                <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
+                <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
+                <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_005</td>
+                <td>EE - <b>Maker - </b>Check menu<b> Enquire Master</b> TRX - <b>AutoTracer CounterParty </b>Must generated</td>
+                <td>Auto Tracer to Counter Party Function</td>
+                <td class="c-step">Step 1</td>
+                <td>1. Open Menu <b>AutoTracer Counterparty<br></b>2. Search existing Reference Number BBFM<br>3. Check Status Reference Number <br>4. Check all data in Function <b>AutoTracer </b>Counterparty</td>
+                <td>1. Successful open AutoTracer<br>2. Reference Number Existing<br>3. Status Function Auto Tracer must be <b>M<br></b>4. All Field data Retrieve from Previous Function</td>
+                <td>• Transaction must be <b>3 Days</b> before Maturity Date</td>
+                <td>UAT</td>
+                <td>Positive</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>adidata.muhammad aji</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>OBN QA</td>
+                <td class="r-review">USER REVIEW</td>
+                <td>BMCI User</td>
+                <td class="tc">UAT_BBFM_25000263</td>
+                <td></td>
+                <td class="tc">Blocked by Ticket BMCI-05</td>
+              </tr>
+              <tr>
+                <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
+                <td class="c-desc">E2E - Modul Bank to Bank Financing From EE<br>- Check Enquire Master PD Transaction<br>- Check Function BBFM AutoPD<br>- Check Function Auto RecoursePD<br>- Check Function Auto Financing<br>-Check Voucher</td>
+                <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_006</td>
+                <td><b>EE - Maker</b> Enquire Master TRX in Menu <b>BBFM AutoPD</b></td>
+                <td>BBFM Supervisor</td>
+                <td class="c-step">Step 1</td>
+                <td>1. Open Menu <b>BBFM AutoPD</b> --&gt; <b>Enquire Master<br></b>2. Check Function<b> BBFM _Auto_PD</b> in list Enquire Master and Check <b>Voucher<br></b>3. Check Function<b> Auto_Financing</b> (also check data GAPI and Voucher)</td>
+                <td>1. Successful Open BBFM AutoPD menu<br>2. Function BBFM_Auto_PD existing and all data is correct also all field <b>should be Protect<br></b>3.  Voucher Generated and Transaction as expected in Emas, Limit side / BDS<br>4. Function Auto_Financing -  All field Validation correct include data (<b>GAPI and Voucher) </b>and all field must be <b>Should be protect</b></td>
+                <td>Data retrieve From retrieve Function</td>
+                <td>UAT</td>
+                <td>Positive</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>adidata.muhammad aji</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>OBN QA</td>
+                <td class="r-review">USER REVIEW</td>
+                <td>BMCI User</td>
+                <td class="tc">UAT_BBFM_25000263</td>
+                <td></td>
+                <td class="tc">Blocked by Ticket BMCI-05</td>
+              </tr>
+              <tr>
+                <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
+                <td class="c-desc">Modul Bank to Bank Financing From EE:<br>- Processing <b>Past Due Settlement </b>with<b> Maker And Checker Account</b></td>
+                <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_007</td>
+                <td>Processing - Maker<br>Approval - Checker<br>Past Due Settlement</td>
+                <td>PastDue Settlement</td>
+                <td class="c-step">Step 1</td>
+                <td>1. Open Menu BBFM AutoPD --&gt; Past Due Settlement<br>2. Search in Field Reference Number existing  -&gt; Next<br>3. Check All Field<br>4. In Tab Parties Choose <b>Full Payment</b> in field Payment Flag<br>5. In Tab Debit choose <b>Full Payment</b> in field Payment Debit <br>6. Confirm<br>7. Login as <b>User Checker</b> -&gt; BBFM PastDue -&gt;  Enquire Master -&gt; Search Reference Number and Check data in Button <b>&quot;View Document&quot; , &quot; Voucher&quot; ,  &quot;GAPI&quot; , All tab and Field<br></b>8. Confirm</td>
+                <td>1. Successful Open menu PastDue Settlement<br>2. Reference Number has Existing<br>3. Field Retrieve from previous Functional<br>4. Successful Choose Payment Flag<br>5. Successful choose Payment Debit<br>6. Successful confirm transaction with<b> Maker </b>Account<br>7. Successful Login <b>Checker</b> Account, Success display Voucher Transaction, Document and GAPI - All Field Validation and calculation are correct from previous Functional<br>8. Successful Confirm Transaction with checker account</td>
+                <td>Data retrieve From retrieve Function</td>
+                <td>UAT</td>
+                <td>Positive</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>adidata.muhammad aji</td>
+                <td class="r-blocked">BLOCKED</td>
+                <td>OBN QA</td>
+                <td class="r-review">USER REVIEW</td>
+                <td>BMCI User</td>
+                <td class="tc">UAT_BBFM_25000263</td>
+                <td></td>
+                <td class="tc">Blocked by Ticket BMCI-05</td>
               </tr>
             </tbody>
           </table>
@@ -856,40 +962,34 @@
           <button class="m-close" type="button" aria-label="Close">✕</button>
         </div>
         <div class="artifact-scroll">
-          <table class="artifact-table">
+          <table class="artifact-table" style="min-width:1650px">
             <thead>
-              <tr><th>Scenario ID</th><th>Scenario Description</th><th>Test Case ID</th><th>Test Case Description</th><th>Pre-requisites</th><th>Test Data</th><th>Environment</th><th>Step Number</th><th>Test Step</th><th>Expected Result</th><th>Test Type</th><th>Assignee</th><th>Label</th></tr>
+              <tr><th style="min-width:280px">Scenario ID</th><th style="min-width:320px">Summary</th><th style="min-width:520px">Step</th><th style="min-width:480px">Expected Result</th></tr>
             </thead>
             <tbody>
               <tr>
-                <td class="tc c-scn">RMT_Widget_SCN001</td>
-                <td class="c-desc">Widget data validation between EDA and RMT</td>
-                <td class="tc c-tcid">RMT_Widget_SCN_001_TC001</td>
-                <td>Widget displays third-party funds (DPK) data correctly</td>
-                <td>Login with <b>Corporate Banking</b> role; EDA data available</td>
-                <td>DPK data snapshot from EDA</td>
-                <td>UAT</td>
-                <td class="c-step">Step 1</td>
-                <td>1. Open the dashboard and select the DPK widget<br>2. Compare each widget value against the <b>EDA</b> source data</td>
-                <td>1. Widget loads and displays DPK data<br>2. All widget values <b>match EDA data</b> field by field</td>
-                <td>Positive</td>
-                <td>adidata.muhamad</td>
-                <td class="tc">RMT_DASHBOARD_WIDGET</td>
+                <td class="c-scn">Cek Default - by Ciso - <b>Add</b> Pegawai role dengan Role Basic User (Manual Input)</td>
+                <td class="c-desc">E2E login as Admin Ciso - Add Pegawai Basic User by Manual Input, Role <b>CB</b> - <b>BOD</b> Level Persetujuan <b>EM </b>- Cek Pending Task lalu Approve</td>
+                <td>1. Login dengan User<b> Ciso Maker</b><br>2. Pergi ke menu Back Office --&gt; User Manajemen --&gt; Manajemen Pegawai --&gt; Klik Button &quot;<b>Tambah Pegawa</b>i&quot; --&gt; Isi form Detail Pegawai (Pastikan memilih Role <b>BOD_CB, Basic User dan Level Persetujuan : EM</b>) dan isi Form <b>Detail Akses Data</b> --&gt; Simpan --&gt; Lanjutkan --&gt; Simpan<br>3. Login dengan akun User Admin <b>Ciso Checker </b><br>4. Pergi ke menu <b>Backoffice</b> --&gt; <b>Pending Task</b> --&gt; Pada widget Pending task pilih data pegawai yang baru dibuat --&gt;  Checklist box --&gt; Setuju --&gt; Setujui --&gt; Ya, Setuju</td>
+                <td>1. Berhasil login sebagai user Ciso maker dan berhasil menambah data Pegawai<br>2. Berhasil login sebagai user checker dan berhasil approving data pegawai yang telah dibuat pada akun Ciso Maker</td>
               </tr>
               <tr>
-                <td class="tc c-scn">RMT_Widget_SCN002</td>
-                <td class="c-desc">Dashboard widget availability after deployment</td>
-                <td class="tc c-tcid">RMT_Widget_SCN_002_TC001</td>
-                <td>All widgets load without API connection errors</td>
-                <td>Application deployed; user logged in</td>
-                <td>—</td>
-                <td>Smoke</td>
-                <td class="c-step">Step 1</td>
-                <td>1. Open the dashboard<br>2. Load every widget section and observe the responses</td>
-                <td>1. Dashboard opens successfully<br>2. All widgets load <b>without API connection errors</b></td>
-                <td>Positive</td>
-                <td>adidata.muhamad</td>
-                <td class="tc">RMT_DASHBOARD_WIDGET</td>
+                <td class="c-scn">Cek Default - by Ciso - <b>Edit</b> Pegawai Role Admin Ciso Segmen</td>
+                <td class="c-desc">E2E Login as Ciso - Edit Pegawai Type <b>Admin Segmen (Role Bebas)</b> - Edit pada form <b>Detail Pegawai</b>, <b>field Level Persetujuan</b> - Cek Pending Task Approve - Login Pegawai Cek Level Persetujuan</td>
+                <td>1. Login as Admin <b>Ciso Maker</b><br>2. Pergi ke menu <b>Back Office</b> --&gt; <b>User Manajemen</b> --&gt;<b> Manajemen Pegawai</b>--&gt; pada widget data pegawai pilih pegawai dengan Type <b>Admin Segment</b> --&gt; Pada Form Detail Pegawai ubah data pada field <b>Level Persetujuan (EM/EMM)</b> --&gt; Lanjut --&gt; Simpan --&gt; Simpan<br>3. Login as <b>UserAdmin Ciso Checker<br></b>4. Pergi ke menu <b>Pending Task</b> --&gt; cari pegawai  dengan tipe<b> Admin Segmen</b> yang sudah diubah --&gt; Setujui --&gt; Setujui --&gt; Ya, Setuju<br>5. Login kembali sebagai <b>Admin Segment</b> ( Data akses yang sudah diubah) <br>6. Cek data pada Field Level Persetujuan melalui menu User Manajement</td>
+                <td>1. Berhasil Login dengan akun Admin Ciso<br>2. Berhasil merubah data pegawai <br>3.berhasil approving perubahan data pegawai<br>4. berhasil login dengan akun pegawai yang telah dirubah dan perubahan data sesuai</td>
+              </tr>
+              <tr>
+                <td class="c-scn">Cek Default - by Ciso - <b>Delete</b> Role</td>
+                <td class="c-desc">E2E Login as Ciso - Search Role by Nama dan Kode, lalu Delete Role - Cek Pending Task lalu Approve</td>
+                <td>1. Login RMT as Admin <b>Ciso Maker</b><br>2. Go to Menu Back Office &gt; User Management &gt;<b> Tab Manajemen SO</b><br>3. Search Role by Nama dan Kode, lalu klik button Sampah<br>4. Klik Button &quot;Ya, Hapus&quot;<br>5. Go to Menu Back  Office &gt; <b>Pending Task</b><br>6. Lakukan Search pada pengajuan yang Pending &gt; Cek data pengajuan pada Listing Pending Task untuk di Delete<br>7. Klik button<b> Checklist</b> pada Direktorat yang tadi sudah di pointing untuk dihapus sebelumnya, klick icon mata disebalah kanan list User Pegawai  dan lakukan pengecekan pada:<br>- <b>Kolom No Ref, Fitur, Tanggal diajukan, Nama Direktorat beserta grup pada Table dengan Status Pending Approval</b><br>8. Klik Button &quot;Setujui&quot;<br>9. Pada halaman Detail Tugas, pastikan semua field dengan value yang sudah sesuai :<br><b>- Riwayat Aktivitas<br>- Kolom No Ref, Fitur, Tanggal diajukan, Nama Direktorat beserta grup pada Table dengan Status Pending Approval</b><br>10. Kemudian klik button &quot;Setujui&quot;<br>11. Klik Button &quot;Ya, setujui&quot;<br>12. Klik button <b>Riwayat</b> di menu <b>Pending Task</b></td>
+                <td>1. Berhasil login RMT as Admin sesuai dengan deskripsi test case<br>2. Berhasil masuk ke menu Manajemen SO<br>3. Berhasil muncul pop up &quot;Hapus Direktorat &quot;XXXX&quot;, Semua data direktorat &quot;XXXX&quot;, akan dihapus secara permanen&quot;<br>4. Berhasil muncul side bar &quot;Berhasil menghapus &quot;XXXX&quot;<br>5. Berhasil masuk ke menu Pending Task<br>6. Berhasil melakukan search sesuai dengan keyword yang diinput<br>7. Berhasil klik button Checklist<br>8. Berhasil masuk ke halaman Detail Tugas<br>9. Data pada Halaman di Detail Tugas Sudah sesuai<br>10. Berhasil muncul pop up Konfirmasi Persetujuan dengan isi : &quot;Setujui pengajuan ini? Persetujuan bersifat permanen dan tidak bisa dianulir&quot; dengan button Batal dan Ya, Setujui<br>11. Berhasil muncul side bar &quot;Berhasil menyetujui pengajuan&quot;<br>12. Status pada Direktorat yang ingin dihapus sudah berhasil merubah menjadi Approved</td>
+              </tr>
+              <tr>
+                <td class="c-scn">Cek Default - by Segmen - Delete Pegawai by MI FU [Approve]</td>
+                <td class="c-desc">Login as Admin Segmen - Delete Pegawai Type Basic User - Cek pada Pending Task - Approve Task</td>
+                <td>1. Login sebagai Admin Segmen<br>2. pergi ke menu back office --&gt; User manajemen --&gt; manajemen pegawai --&gt; pilih pegawai dengan tipe Basic User --&gt; klik icon tempat sampah (delete) --&gt;  setujui<br>3. Login User Admin Segment Checker<br>4. Pergi ke menu back office --&gt; Pending task --&gt; Pilih persetujuan approval yang dihapus tadi --&gt;  setuju --&gt;Setujui --&gt; Ya,Setuju</td>
+                <td>1. Berhasil Login sebagai Admin Segmen<br>2. Terdapat Button &quot;Delete&quot; pada akun Maker<br>3. Berhasil menghapus pegawai pada menu User manajemen<br>4. Berhasil Login Akun Admin Segmen Checker dan approving pengajuan delete pegawai</td>
               </tr>
             </tbody>
           </table>
@@ -1243,8 +1343,8 @@
     'c4-act': 'Menulis test case provisioning back-office, lalu mengeksekusi 637 skenario tes yang berfokus pada validasi widget dan data. Untuk pengecekan data, tim EDA menyediakan data sumber dalam sheet, yang saya rekonsiliasi field demi field dengan aplikasi RMT untuk memastikan konsistensi. Saat ini dalam fase idle menunggu penyelesaian Phase 1, saya menjalankan smoke check harian informal \u2014 rutin menangkap widget yang kehilangan koneksi API dan error di UI \u2014 lalu melaporkannya.',
     'c4-res': 'Mengeksekusi <b>637 skenario</b> (dari total suite 14.761), dengan <b>628+ lulus</b> dan <b>73 defect</b> ditemukan \u2014 wajar untuk aplikasi yang baru dibangun, sekaligus bukti cakupan tahap awal yang efektif.',
     'sc1-p': 'Siklus hidup trade FX Cash di Front Arena \u2014 dari booking di Front Office hingga BO Confirm.',
-    'sc2-p': 'Penerbitan Import LC secara E2E dan konfirmasi cross-currency ke SOA di Eximbills Enterprise.',
-    'sc3-p': 'Validasi data widget terhadap sumber EDA dan pengecekan ketersediaan dashboard.',
+    'sc2-p': 'E2E Bank-to-Bank Financing (BBFM) di Eximbills Enterprise \u2014 alur maker\u2013checker, tracer, dan past-due settlement, termasuk defect cross-currency (BMCI-05).',
+    'sc3-p': 'E2E user management back-office \u2014 tambah, ubah, dan hapus pegawai serta role melalui alur persetujuan maker\u2013checker.',
     'sc-open': 'Lihat test script \u2192',
     'sc-cap': '\u2191 Klik salah satu card untuk membuka cuplikan <b>test scenario script asli</b> saya \u2014 skenario, test data, langkah, dan expected result.',
     'lv1': 'Test case dieksekusi',
