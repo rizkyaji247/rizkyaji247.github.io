@@ -78,8 +78,8 @@
   <div class="hero">
     <span class="eyebrow">Personal Project · Agentic AI</span>
     <h1>Agentic AI (OpenClaw env)</h1>
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit — sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <div class="meta"><span class="chip">Agents</span><span class="chip">OpenClaw</span><span class="chip">Automation</span></div>
+    <p class="lead">Annie — a personal AI agent running on OpenClaw that handles real tasks from plain-language commands: emails, an auto-replied inbox, and Linux troubleshooting. No UI, no manual scripts.</p>
+    <div class="meta"><span class="chip">Agents</span><span class="chip">OpenClaw</span><span class="chip">Telegram Bot API</span><span class="chip">Linux</span></div>
   </div>
 
   <!-- COVER IMAGE — uncomment the img line & set src, then delete the placeholder text -->
@@ -91,22 +91,22 @@
 
   <section>
     <h2>Overview</h2>
-    <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="ph">Annie is a personal AI agent I run on the OpenClaw environment. The idea is simple: I shouldn't have to open an app, click through a UI, or write boilerplate to get routine digital tasks done — I should just be able to ask. Annie takes natural-language instructions (mostly through Telegram) and executes them end-to-end: composing and sending emails, watching an inbox and replying on my behalf, and even troubleshooting my Linux machine. It runs continuously on my own setup, which means I'm also the one responsible for keeping it reliable — monitoring its behavior, catching its mistakes, and tightening its rules over time. In other words: I don't just use an agent, I operate one.</p>
   </section>
 
   <section>
     <h2>What I built</h2>
-    <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod, nisl eget aliquam ultricies, nunc sapien aliquet nunc, eget aliquam nisl nunc eget nisl.</p>
+    <p class="ph">Three working capabilities, all driven by natural language — no dashboards, no cron jobs I have to babysit:</p>
     <ul class="list">
-      <li>Lorem ipsum dolor sit amet consectetur</li>
-      <li>Adipiscing elit sed do eiusmod tempor</li>
-      <li>Incididunt ut labore et dolore magna</li>
+      <li>Natural-language email dispatch via Telegram — I message Annie something like "send an email to [address] about [topic] and attach [document]", and she composes, attaches, and sends it end-to-end, then confirms back in the chat.</li>
+      <li>Autonomous Gmail auto-responder — Annie monitors a dedicated Gmail inbox every 2 minutes, detects new incoming mail, filters out spam and automated messages, and sends a professional reply on my behalf as an assistant.</li>
+      <li>Conversational Linux troubleshooting — when something breaks on my personal machine (e.g. a Windows game refusing to run on Lutris), I describe the problem in plain language and Annie diagnoses and fixes the config; she also installs frameworks and libraries from a single natural-language request.</li>
     </ul>
   </section>
 
   <section>
     <h2>Tools &amp; stack</h2>
-    <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit — sed do eiusmod tempor incididunt ut labore.</p>
+    <p class="ph">OpenClaw as the agent runtime, an LLM as the brain, Telegram Bot API as the command channel, Gmail for the monitored inbox, and a Linux machine as both the host and one of the "systems under test". I chose Telegram because it makes the agent reachable from anywhere — my phone becomes the terminal.</p>
   </section>
 
   <section>
@@ -120,7 +120,7 @@
 
   <section>
     <h2>What I learned</h2>
-    <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <p class="ph">Operating an autonomous agent turned out to be surprisingly close to my day job in QA. An agent that acts on its own is only as good as the rules and checks around it — so I learned to define expected behavior up front, watch for regressions after every change, and treat every wrong reply or failed task as a defect to reproduce, diagnose, and fix. It also taught me how LLM-based systems fail in ways traditional software doesn't: confidently, quietly, and non-deterministically — which is exactly why testers belong in the AI era.</p>
   </section>
 
   <div class="cta">
