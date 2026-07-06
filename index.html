@@ -218,6 +218,7 @@
   .artifact-table td{line-height:1.55}
   .artifact-table th,.artifact-table td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
   .artifact-table tbody td{border-bottom:2px solid rgba(27,22,51,.30)}
+  .artifact-table .col-no{min-width:44px;width:44px;text-align:center;color:var(--muted)}
   /* Excel-style grid lines, theme-aware */
   .artifact-table th{border-right:1px solid rgba(255,255,255,.16)}
   .artifact-table td{border-right:1px dashed color-mix(in srgb, var(--violet) 26%, transparent)}
@@ -767,10 +768,11 @@
         <div class="artifact-scroll">
           <table class="artifact-table">
             <thead>
-              <tr><th>Scenario ID</th><th>Scenario Description</th><th>Test Case ID</th><th>Test Case Description</th><th>Pre-requisites</th><th>Test Data</th><th>Environment</th><th>Step Number</th><th>Test Step</th><th>Expected Result</th><th>Test Type</th><th>Assignee</th><th>Label</th></tr>
+              <tr><th class="col-no">No</th><th>Scenario ID</th><th>Scenario Description</th><th>Test Case ID</th><th>Test Case Description</th><th>Pre-requisites</th><th>Test Data</th><th>Environment</th><th>Step Number</th><th>Test Step</th><th>Expected Result</th><th>Test Type</th><th>Assignee</th><th>Label</th></tr>
             </thead>
             <tbody>
               <tr>
+                <td class="tc col-no">1</td>
                 <td class="tc c-scn">NTCS_1B_BankNotes_Trader_SCN001</td>
                 <td class="c-desc">Create New Trade with status Buy — Simulated → Reserved (automatically FO Confirmed)</td>
                 <td class="tc c-tcid">NTCS_1B_BankNotes_Trader_SCN_001_TC001</td>
@@ -786,6 +788,7 @@
                 <td class="tc">NTCS_DROP2_BANK_NOTES_TRADER</td>
               </tr>
               <tr>
+                <td class="tc col-no">2</td>
                 <td class="tc c-scn">NTCS_1B_BankNotes_Trader_SCN002</td>
                 <td class="c-desc">Checking status <b>Reserved &amp; BO Confirm</b> when Login with <b>FO MAKER</b></td>
                 <td class="tc c-tcid">NTCS_1B_BankNotes_Trader_SCN_002_TC001</td>
@@ -817,10 +820,11 @@
         <div class="artifact-scroll">
           <table class="artifact-table" style="min-width:3900px">
             <thead>
-              <tr><th style="min-width:210px">Scenario ID</th><th style="min-width:240px">Scenario Description</th><th style="min-width:230px">Test Case ID</th><th style="min-width:240px">Test Case Description</th><th style="min-width:220px">Pre-Requisite</th><th style="min-width:80px">Step No</th><th style="min-width:480px">Test Step</th><th style="min-width:420px">Expected Result</th><th style="min-width:260px">Test Data</th><th style="min-width:90px">Environment</th><th style="min-width:90px">Type</th><th style="min-width:110px">Result TQA</th><th style="min-width:170px">Assign TQA</th><th style="min-width:110px">Result OBN</th><th style="min-width:120px">Assign OBN</th><th style="min-width:120px">Result BMCI</th><th style="min-width:120px">Assign BMCI</th><th style="min-width:190px">Label</th><th style="min-width:160px">Note</th><th style="min-width:130px">Ticket Defect</th></tr>
+              <tr><th class="col-no">No</th><th style="min-width:210px">Scenario ID</th><th style="min-width:240px">Scenario Description</th><th style="min-width:230px">Test Case ID</th><th style="min-width:240px">Test Case Description</th><th style="min-width:220px">Pre-Requisite</th><th style="min-width:80px">Step No</th><th style="min-width:480px">Test Step</th><th style="min-width:420px">Expected Result</th><th style="min-width:260px">Test Data</th><th style="min-width:90px">Environment</th><th style="min-width:90px">Type</th><th style="min-width:110px">Result TQA</th><th style="min-width:170px">Assign TQA</th><th style="min-width:110px">Result OBN</th><th style="min-width:120px">Assign OBN</th><th style="min-width:120px">Result BMCI</th><th style="min-width:120px">Assign BMCI</th><th style="min-width:190px">Label</th><th style="min-width:160px">Note</th><th style="min-width:130px">Ticket Defect</th></tr>
             </thead>
             <tbody>
               <tr>
+                <td class="tc col-no">1</td>
                 <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
                 <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
                 <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_001</td>
@@ -843,6 +847,7 @@
                 <td class="tc"></td>
               </tr>
               <tr>
+                <td class="tc col-no">2</td>
                 <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
                 <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
                 <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_002</td>
@@ -865,6 +870,7 @@
                 <td class="tc">BMCI-05</td>
               </tr>
               <tr>
+                <td class="tc col-no">3</td>
                 <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
                 <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
                 <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_004</td>
@@ -887,6 +893,7 @@
                 <td class="tc">Blocked by Ticket BMCI-05</td>
               </tr>
               <tr>
+                <td class="tc col-no">4</td>
                 <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
                 <td class="c-desc">E2E - Modul Bank to Bank Financing From EE</td>
                 <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_005</td>
@@ -909,6 +916,7 @@
                 <td class="tc">Blocked by Ticket BMCI-05</td>
               </tr>
               <tr>
+                <td class="tc col-no">5</td>
                 <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
                 <td class="c-desc">E2E - Modul Bank to Bank Financing From EE<br>- Check Enquire Master PD Transaction<br>- Check Function BBFM AutoPD<br>- Check Function Auto RecoursePD<br>- Check Function Auto Financing<br>-Check Voucher</td>
                 <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_006</td>
@@ -931,6 +939,7 @@
                 <td class="tc">Blocked by Ticket BMCI-05</td>
               </tr>
               <tr>
+                <td class="tc col-no">6</td>
                 <td class="tc c-scn">UAT_SCN_001_BBFM_CI_EE</td>
                 <td class="c-desc">Modul Bank to Bank Financing From EE:<br>- Processing <b>Past Due Settlement </b>with<b> Maker And Checker Account</b></td>
                 <td class="tc c-tcid">UAT_SCN_001_BBFM_CI_EE_TC_007</td>
@@ -969,28 +978,32 @@
         <div class="artifact-scroll">
           <table class="artifact-table" style="min-width:1650px">
             <thead>
-              <tr><th style="min-width:280px">Scenario ID</th><th style="min-width:320px">Summary</th><th style="min-width:520px">Step</th><th style="min-width:480px">Expected Result</th></tr>
+              <tr><th class="col-no">No</th><th style="min-width:280px">Scenario ID</th><th style="min-width:320px">Summary</th><th style="min-width:520px">Step</th><th style="min-width:480px">Expected Result</th></tr>
             </thead>
             <tbody>
               <tr>
+                <td class="tc col-no">1</td>
                 <td class="c-scn">Cek Default - by Ciso - <b>Add</b> Pegawai role dengan Role Basic User (Manual Input)</td>
                 <td class="c-desc">E2E login as Admin Ciso - Add Pegawai Basic User by Manual Input, Role <b>CB</b> - <b>BOD</b> Level Persetujuan <b>EM </b>- Cek Pending Task lalu Approve</td>
                 <td>1. Login dengan User<b> Ciso Maker</b><br>2. Pergi ke menu Back Office --&gt; User Manajemen --&gt; Manajemen Pegawai --&gt; Klik Button &quot;<b>Tambah Pegawa</b>i&quot; --&gt; Isi form Detail Pegawai (Pastikan memilih Role <b>BOD_CB, Basic User dan Level Persetujuan : EM</b>) dan isi Form <b>Detail Akses Data</b> --&gt; Simpan --&gt; Lanjutkan --&gt; Simpan<br>3. Login dengan akun User Admin <b>Ciso Checker </b><br>4. Pergi ke menu <b>Backoffice</b> --&gt; <b>Pending Task</b> --&gt; Pada widget Pending task pilih data pegawai yang baru dibuat --&gt;  Checklist box --&gt; Setuju --&gt; Setujui --&gt; Ya, Setuju</td>
                 <td>1. Berhasil login sebagai user Ciso maker dan berhasil menambah data Pegawai<br>2. Berhasil login sebagai user checker dan berhasil approving data pegawai yang telah dibuat pada akun Ciso Maker</td>
               </tr>
               <tr>
+                <td class="tc col-no">2</td>
                 <td class="c-scn">Cek Default - by Ciso - <b>Edit</b> Pegawai Role Admin Ciso Segmen</td>
                 <td class="c-desc">E2E Login as Ciso - Edit Pegawai Type <b>Admin Segmen (Role Bebas)</b> - Edit pada form <b>Detail Pegawai</b>, <b>field Level Persetujuan</b> - Cek Pending Task Approve - Login Pegawai Cek Level Persetujuan</td>
                 <td>1. Login as Admin <b>Ciso Maker</b><br>2. Pergi ke menu <b>Back Office</b> --&gt; <b>User Manajemen</b> --&gt;<b> Manajemen Pegawai</b>--&gt; pada widget data pegawai pilih pegawai dengan Type <b>Admin Segment</b> --&gt; Pada Form Detail Pegawai ubah data pada field <b>Level Persetujuan (EM/EMM)</b> --&gt; Lanjut --&gt; Simpan --&gt; Simpan<br>3. Login as <b>UserAdmin Ciso Checker<br></b>4. Pergi ke menu <b>Pending Task</b> --&gt; cari pegawai  dengan tipe<b> Admin Segmen</b> yang sudah diubah --&gt; Setujui --&gt; Setujui --&gt; Ya, Setuju<br>5. Login kembali sebagai <b>Admin Segment</b> ( Data akses yang sudah diubah) <br>6. Cek data pada Field Level Persetujuan melalui menu User Manajement</td>
                 <td>1. Berhasil Login dengan akun Admin Ciso<br>2. Berhasil merubah data pegawai <br>3.berhasil approving perubahan data pegawai<br>4. berhasil login dengan akun pegawai yang telah dirubah dan perubahan data sesuai</td>
               </tr>
               <tr>
+                <td class="tc col-no">3</td>
                 <td class="c-scn">Cek Default - by Ciso - <b>Delete</b> Role</td>
                 <td class="c-desc">E2E Login as Ciso - Search Role by Nama dan Kode, lalu Delete Role - Cek Pending Task lalu Approve</td>
                 <td>1. Login RMT as Admin <b>Ciso Maker</b><br>2. Go to Menu Back Office &gt; User Management &gt;<b> Tab Manajemen SO</b><br>3. Search Role by Nama dan Kode, lalu klik button Sampah<br>4. Klik Button &quot;Ya, Hapus&quot;<br>5. Go to Menu Back  Office &gt; <b>Pending Task</b><br>6. Lakukan Search pada pengajuan yang Pending &gt; Cek data pengajuan pada Listing Pending Task untuk di Delete<br>7. Klik button<b> Checklist</b> pada Direktorat yang tadi sudah di pointing untuk dihapus sebelumnya, klick icon mata disebalah kanan list User Pegawai  dan lakukan pengecekan pada:<br>- <b>Kolom No Ref, Fitur, Tanggal diajukan, Nama Direktorat beserta grup pada Table dengan Status Pending Approval</b><br>8. Klik Button &quot;Setujui&quot;<br>9. Pada halaman Detail Tugas, pastikan semua field dengan value yang sudah sesuai :<br><b>- Riwayat Aktivitas<br>- Kolom No Ref, Fitur, Tanggal diajukan, Nama Direktorat beserta grup pada Table dengan Status Pending Approval</b><br>10. Kemudian klik button &quot;Setujui&quot;<br>11. Klik Button &quot;Ya, setujui&quot;<br>12. Klik button <b>Riwayat</b> di menu <b>Pending Task</b></td>
                 <td>1. Berhasil login RMT as Admin sesuai dengan deskripsi test case<br>2. Berhasil masuk ke menu Manajemen SO<br>3. Berhasil muncul pop up &quot;Hapus Direktorat &quot;XXXX&quot;, Semua data direktorat &quot;XXXX&quot;, akan dihapus secara permanen&quot;<br>4. Berhasil muncul side bar &quot;Berhasil menghapus &quot;XXXX&quot;<br>5. Berhasil masuk ke menu Pending Task<br>6. Berhasil melakukan search sesuai dengan keyword yang diinput<br>7. Berhasil klik button Checklist<br>8. Berhasil masuk ke halaman Detail Tugas<br>9. Data pada Halaman di Detail Tugas Sudah sesuai<br>10. Berhasil muncul pop up Konfirmasi Persetujuan dengan isi : &quot;Setujui pengajuan ini? Persetujuan bersifat permanen dan tidak bisa dianulir&quot; dengan button Batal dan Ya, Setujui<br>11. Berhasil muncul side bar &quot;Berhasil menyetujui pengajuan&quot;<br>12. Status pada Direktorat yang ingin dihapus sudah berhasil merubah menjadi Approved</td>
               </tr>
               <tr>
+                <td class="tc col-no">4</td>
                 <td class="c-scn">Cek Default - by Segmen - Delete Pegawai by MI FU [Approve]</td>
                 <td class="c-desc">Login as Admin Segmen - Delete Pegawai Type Basic User - Cek pada Pending Task - Approve Task</td>
                 <td>1. Login sebagai Admin Segmen<br>2. pergi ke menu back office --&gt; User manajemen --&gt; manajemen pegawai --&gt; pilih pegawai dengan tipe Basic User --&gt; klik icon tempat sampah (delete) --&gt;  setujui<br>3. Login User Admin Segment Checker<br>4. Pergi ke menu back office --&gt; Pending task --&gt; Pilih persetujuan approval yang dihapus tadi --&gt;  setuju --&gt;Setujui --&gt; Ya,Setuju</td>
