@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Website Automation — Rizky.QA</title>
+<script>try{var _t=localStorage.getItem("theme");if(_t&&_t!=="light")document.documentElement.setAttribute("data-theme",_t);}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
     --grad-soft:linear-gradient(120deg,rgba(109,74,255,.10),rgba(255,122,89,.10));
     --shadow:0 16px 40px -20px rgba(27,22,51,.28);
     --maxw:840px;
+    --card:#FFFFFF;--panel:#1B1633;--nav-bg:rgba(255,255,255,.85);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -24,7 +26,7 @@
   a{color:inherit;text-decoration:none}
   .mono{font-family:'JetBrains Mono',monospace}
 
-  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(255,255,255,.85);border-bottom:1px solid var(--line)}
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:var(--nav-bg);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{font-family:'Space Grotesk';font-weight:700;font-size:18px}
   .brand span{color:var(--coral)}
@@ -48,7 +50,7 @@
   h2{font-family:'Space Grotesk';font-weight:600;font-size:24px;letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:center;gap:10px}
   h2::before{content:"//";font-family:'JetBrains Mono';font-size:15px;color:var(--coral)}
   p{color:var(--ink-soft);font-size:15.5px;margin-bottom:12px}
-  .ph{color:var(--muted);font-style:italic;background:var(--bg-warm);border:1px dashed var(--line);border-radius:12px;padding:14px 18px;font-size:14.5px}
+  .ph{color:var(--ink-soft);font-style:normal;background:var(--bg-warm);border:1px dashed var(--line);border-radius:12px;padding:14px 18px;font-size:14.5px}
   ul.list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:6px 0 12px}
   ul.list li{position:relative;padding-left:20px;font-size:15px;color:var(--ink-soft)}
   ul.list li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:2px;background:var(--grad)}
@@ -56,21 +58,63 @@
   .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
   .shot{border-radius:14px;border:2px dashed rgba(109,74,255,.25);background:var(--grad-soft);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:12.5px;position:relative;overflow:hidden;padding:14px}
   .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .shot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+  .shot.tall{aspect-ratio:9/16}
+  .cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 
-  .cta{margin:44px 0 64px;background:var(--ink);color:#fff;border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .cta{margin:44px 0 64px;background:var(--panel);color:#fff;border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden}
   .cta::before{content:"";position:absolute;bottom:-70%;right:-10%;width:380px;height:380px;background:var(--grad);filter:blur(100px);opacity:.45;border-radius:50%}
   .cta b{font-family:'Space Grotesk';font-size:19px;position:relative}
   .btn{position:relative;display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-weight:600;font-size:14px;padding:12px 22px;border-radius:999px;background:var(--grad);color:#fff;box-shadow:0 8px 22px -8px rgba(109,74,255,.6)}
 
   footer{padding:32px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
   @media(max-width:640px){.gallery{grid-template-columns:1fr}}
+
+  /* ============ THEMES ============ */
+  [data-theme="dark"]{
+    --ink:#EDEAFB;--ink-soft:#BFB9DE;--muted:#8681A6;
+    --bg:#0E0B1E;--bg-warm:#141021;--line:#292345;
+    --card:#181330;--panel:#0A0816;--nav-bg:rgba(14,11,30,.85);
+    --grad-soft:linear-gradient(120deg,rgba(109,74,255,.18),rgba(255,122,89,.18));
+    --shadow:0 16px 40px -20px rgba(0,0,0,.65);
+  }
+  [data-theme="cyber"]{
+    --ink:#D9FFEA;--ink-soft:#9BE3BE;--muted:#5FA183;
+    --bg:#040D08;--bg-warm:#07130C;--line:#153826;
+    --card:#0A1B11;--panel:#020805;--nav-bg:rgba(4,13,8,.88);
+    --violet:#00E68A;--coral:#00C2FF;
+    --grad:linear-gradient(120deg,#00E68A 0%,#00C2FF 100%);
+    --grad-soft:linear-gradient(120deg,rgba(0,230,138,.10),rgba(0,194,255,.10));
+    --shadow:0 16px 44px -18px rgba(0,230,138,.28);
+  }
+  [data-theme="cyber"] .chip{border-color:rgba(0,230,138,.22)}
+  [data-theme="cyber"] .btn{box-shadow:0 8px 24px -8px rgba(0,230,138,.55);color:#03170D}
+
+  /* NAV CONTROL BUTTONS */
+  .nav-right{display:inline-flex;align-items:center;gap:14px}
+  .nav-ctrl{display:inline-flex;align-items:center;gap:8px}
+  .icon-btn{
+    width:36px;height:36px;border-radius:11px;border:1.5px solid var(--line);
+    background:var(--card,#fff);color:var(--ink);cursor:pointer;font-size:15px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk';font-weight:700;
+    transition:border-color .2s,transform .2s;
+  }
+  .icon-btn:hover{border-color:var(--violet);transform:translateY(-1px)}
+  .lang-btn{font-size:12px;letter-spacing:.05em}
 </style>
 </head>
 <body>
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="index.html">Rizky<span>.</span>QA</a>
-    <a class="back" href="index.html#interests">← Back to portfolio</a>
+    <span class="nav-right">
+      <a class="back" href="index.html#interests" data-i18n="back">← Back to portfolio</a>
+      <span class="nav-ctrl">
+        <button class="icon-btn theme-btn" type="button" title="Switch theme">☀️</button>
+        <button class="icon-btn lang-btn" type="button" title="Ganti bahasa / Switch language">ID</button>
+      </span>
+    </span>
   </div>
 </header>
 
@@ -90,12 +134,12 @@
   </div>
 
   <section>
-    <h2>Overview</h2>
+    <h2 data-i18n="h-ov">Overview</h2>
     <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </section>
 
   <section>
-    <h2>What I built</h2>
+    <h2 data-i18n="h-built">What I built</h2>
     <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod, nisl eget aliquam ultricies, nunc sapien aliquet nunc, eget aliquam nisl nunc eget nisl.</p>
     <ul class="list">
       <li>Lorem ipsum dolor sit amet consectetur</li>
@@ -105,12 +149,12 @@
   </section>
 
   <section>
-    <h2>Tools &amp; stack</h2>
+    <h2 data-i18n="h-tools">Tools &amp; stack</h2>
     <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit — sed do eiusmod tempor incididunt ut labore.</p>
   </section>
 
   <section>
-    <h2>Screenshots</h2>
+    <h2 data-i18n="h-shots">Screenshots</h2>
     <div class="gallery">
       <!-- Tiap kotak: uncomment <img>, isi src, hapus teks placeholder -->
       <div class="shot"><!-- <img src="shot-1.jpg" alt=""> -->Screenshot 1 — upload gambarmu</div>
@@ -119,18 +163,71 @@
   </section>
 
   <section>
-    <h2>What I learned</h2>
+    <h2 data-i18n="h-learned">What I learned</h2>
     <p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
   </section>
 
   <div class="cta">
-    <b>Want to see the code or a demo?</b>
+    <b data-i18n="cta-b">Want to see the code or a demo?</b>
     <!-- Ganti href dengan link repo GitHub / demo -->
-    <a class="btn" href="#">Open repository →</a>
+    <a class="btn" href="#" data-i18n="cta-btn">Open repository →</a>
   </div>
 </div>
 
 <footer>© <span id="yr"></span> Muhamad Rizky Aji Nugroho · <a href="index.html" style="color:var(--violet)">Rizky.QA</a></footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+
+<script>
+  // Theme switcher (shared localStorage with the main page)
+  const themeBtn = document.querySelector('.theme-btn');
+  const themeOrder = ['light', 'dark', 'cyber'];
+  const themeIcons = { light: '\u2600\uFE0F', dark: '\uD83C\uDF19', cyber: '\u26A1' };
+  let curTheme = localStorage.getItem('theme') || 'light';
+  if (!themeOrder.includes(curTheme)) curTheme = 'light';
+  const applyTheme = t => {
+    if (t === 'light') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', t);
+    themeBtn.textContent = themeIcons[t];
+    localStorage.setItem('theme', t);
+  };
+  applyTheme(curTheme);
+  themeBtn.addEventListener('click', () => {
+    curTheme = themeOrder[(themeOrder.indexOf(curTheme) + 1) % themeOrder.length];
+    applyTheme(curTheme);
+  });
+
+  // Language switcher
+  const I18N_ID = {
+    "back": "← Kembali ke portofolio",
+    "h-ov": "Gambaran Umum",
+    "h-built": "Yang saya bangun",
+    "h-tools": "Tools &amp; stack",
+    "h-shots": "Screenshot",
+    "h-learned": "Yang saya pelajari",
+    "cta-b": "Mau lihat kode atau demonya?",
+    "cta-btn": "Buka repository →"
+};
+  const langBtn = document.querySelector('.lang-btn');
+  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const i18nOrig = new Map();
+  i18nEls.forEach(el => i18nOrig.set(el, el.innerHTML));
+  let curLang = localStorage.getItem('lang') || 'en';
+  if (curLang !== 'id') curLang = 'en';
+  const applyLang = l => {
+    document.documentElement.lang = l;
+    i18nEls.forEach(el => {
+      const k = el.dataset.i18n;
+      if (l === 'id' && I18N_ID[k]) el.innerHTML = I18N_ID[k];
+      else el.innerHTML = i18nOrig.get(el);
+    });
+    langBtn.textContent = (l === 'en') ? 'ID' : 'EN';
+    localStorage.setItem('lang', l);
+  };
+  applyLang(curLang);
+  langBtn.addEventListener('click', () => {
+    curLang = (curLang === 'en') ? 'id' : 'en';
+    applyLang(curLang);
+  });
+</script>
 </body>
 </html>
