@@ -468,6 +468,19 @@
   [data-theme="cyber"] .btn-primary{box-shadow:0 8px 24px -8px rgba(0,230,138,.55);color:#03170D}
   [data-theme="cyber"] .banner-tag{text-shadow:0 0 10px rgba(0,230,138,.6)}
 
+  /* UNDER MAINTENANCE CARD */
+  .gears{position:relative;width:112px;height:88px;margin-bottom:6px}
+  .gear{position:absolute;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .gear1{width:62px;height:62px;left:8px;top:6px;stroke:var(--violet);animation:gear-spin 7s linear infinite}
+  .gear2{width:40px;height:40px;left:62px;top:40px;stroke:var(--coral);animation:gear-spin-rev 5s linear infinite}
+  @keyframes gear-spin{to{transform:rotate(360deg)}}
+  @keyframes gear-spin-rev{to{transform:rotate(-360deg)}}
+  .maint-label{
+    font-family:'JetBrains Mono';font-size:11px;font-weight:700;letter-spacing:.14em;
+    color:var(--violet);animation:maint-blink 2.2s ease-in-out infinite;
+  }
+  @keyframes maint-blink{0%,100%{opacity:1}50%{opacity:.45}}
+
   /* NAV CONTROL BUTTONS */
   .nav-ctrl{display:inline-flex;align-items:center;gap:8px;margin-left:18px}
   .nav-links{margin-left:auto}
@@ -1131,23 +1144,23 @@
       <!-- PROJECT C -->
       <div class="proj reveal">
         <div class="proj-img">
-          <span class="tag" data-i18n="tag-pp">PERSONAL PROJECT</span>
-          <!-- <img src="project-automation.jpg" alt="Web automation project"> -->
-          <div class="pic">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span class="tag" data-i18n="tag-um">UNDER MAINTENANCE</span>
+          <div class="gears">
+            <svg class="gear gear1" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="gear gear2" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
-          <small data-i18n="auto-small">Add a screenshot of<br>your automation project here</small>
+          <small class="maint-label" data-i18n="maint-lbl">WORK IN PROGRESS…</small>
         </div>
         <div class="proj-body">
           <span class="kicker">// Automation</span>
           <h3>Website Automation</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+          <p data-i18n="auto-p">This project is currently under maintenance — the write-up and evidence are being prepared. Check back soon!</p>
           <div class="chips">
             <span class="chip">Web Automation</span>
             <span class="chip">UiPath</span>
-            <span class="chip">Lorem</span>
+            
           </div>
-          <a class="proj-link" href="project-automation.html" data-i18n="view-proj">View project →</a>
+          <span class="proj-link" style="color:var(--muted);cursor:default" data-i18n="maint-link">🔧 Coming back soon</span>
         </div>
       </div>
     </div>
@@ -1387,6 +1400,10 @@
     'proj1-p': 'Saya menjalankan agent AI personal (\u201CAnnie\u201D) di OpenClaw yang mengerjakan tugas nyata dari perintah bahasa sehari-hari: mengirim email lewat Telegram, membalas otomatis inbox Gmail yang dipantaunya setiap 2 menit, dan men-troubleshoot mesin Linux saya \u2014 tanpa UI, tanpa script manual.',
     'tag-pp': 'PROJECT PRIBADI',
     'auto-small': 'Tambahkan screenshot<br>project automation kamu di sini',
+    'tag-um': 'DALAM PERBAIKAN',
+    'maint-lbl': 'SEDANG DIKERJAKAN…',
+    'auto-p': 'Project ini sedang dalam perbaikan — write-up dan evidence-nya sedang disiapkan. Nantikan segera!',
+    'maint-link': '🔧 Segera kembali',
     'view-proj': 'Lihat project \u2192',
     'ts-badge': '<span class="pulse"></span> TESTIMONI \u00B7 SEDANG DIKUMPULKAN',
     'ts-text': 'Sedang mengumpulkan beberapa kata dari para lead, rekan tim, dan user yang pernah bekerja sama dengan saya. Nantikan segera.',
